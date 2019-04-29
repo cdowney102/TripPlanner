@@ -15,10 +15,13 @@ class MainCoordinator: Coordinator {
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
+        self.navigationController.setNavigationBarHidden(true, animated: false)
     }
     
     func start() {
+        #warning("grab data from DBManager and pass it -- may be empty")
         let vc = HomeController()
+        vc.mainCoordinator = self
         navigationController.pushViewController(vc, animated: true)
     }
 }

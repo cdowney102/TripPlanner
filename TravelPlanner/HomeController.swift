@@ -9,12 +9,14 @@
 import UIKit
 
 class HomeController: UIViewController {
+    
+    weak var mainCoordinator: MainCoordinator?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .purplem
-        
+        let homeView = HomeView(frame: view.bounds)
+        view.addSubview(homeView)
         
     }
 
