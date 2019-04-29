@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		831F2CED2276977400CA2226 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831F2CEC2276977400CA2226 /* AppDelegate.swift */; };
-		831F2CEF2276977400CA2226 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831F2CEE2276977400CA2226 /* ViewController.swift */; };
-		831F2CF22276977400CA2226 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 831F2CF02276977400CA2226 /* Main.storyboard */; };
+		831F2CEF2276977400CA2226 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831F2CEE2276977400CA2226 /* HomeController.swift */; };
 		831F2CF42276977600CA2226 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 831F2CF32276977600CA2226 /* Assets.xcassets */; };
 		831F2CF72276977600CA2226 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 831F2CF52276977600CA2226 /* LaunchScreen.storyboard */; };
 		831F2D022276977600CA2226 /* TravelPlannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831F2D012276977600CA2226 /* TravelPlannerTests.swift */; };
+		831F2D0E2276983600CA2226 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831F2D0D2276983600CA2226 /* Coordinator.swift */; };
+		831F2D102276989F00CA2226 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831F2D0F2276989F00CA2226 /* MainCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,14 +29,15 @@
 /* Begin PBXFileReference section */
 		831F2CE92276977400CA2226 /* TravelPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		831F2CEC2276977400CA2226 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		831F2CEE2276977400CA2226 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		831F2CF12276977400CA2226 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		831F2CEE2276977400CA2226 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		831F2CF32276977600CA2226 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		831F2CF62276977600CA2226 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		831F2CF82276977600CA2226 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		831F2CFD2276977600CA2226 /* TravelPlannerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravelPlannerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		831F2D012276977600CA2226 /* TravelPlannerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelPlannerTests.swift; sourceTree = "<group>"; };
 		831F2D032276977600CA2226 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		831F2D0D2276983600CA2226 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		831F2D0F2276989F00CA2226 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,9 +79,9 @@
 		831F2CEB2276977400CA2226 /* TravelPlanner */ = {
 			isa = PBXGroup;
 			children = (
+				831F2D0C2276982400CA2226 /* Coordinators */,
 				831F2CEC2276977400CA2226 /* AppDelegate.swift */,
-				831F2CEE2276977400CA2226 /* ViewController.swift */,
-				831F2CF02276977400CA2226 /* Main.storyboard */,
+				831F2CEE2276977400CA2226 /* HomeController.swift */,
 				831F2CF32276977600CA2226 /* Assets.xcassets */,
 				831F2CF52276977600CA2226 /* LaunchScreen.storyboard */,
 				831F2CF82276977600CA2226 /* Info.plist */,
@@ -94,6 +96,15 @@
 				831F2D032276977600CA2226 /* Info.plist */,
 			);
 			path = TravelPlannerTests;
+			sourceTree = "<group>";
+		};
+		831F2D0C2276982400CA2226 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				831F2D0D2276983600CA2226 /* Coordinator.swift */,
+				831F2D0F2276989F00CA2226 /* MainCoordinator.swift */,
+			);
+			path = Coordinators;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,7 +190,6 @@
 			files = (
 				831F2CF72276977600CA2226 /* LaunchScreen.storyboard in Resources */,
 				831F2CF42276977600CA2226 /* Assets.xcassets in Resources */,
-				831F2CF22276977400CA2226 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,8 +207,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				831F2CEF2276977400CA2226 /* ViewController.swift in Sources */,
+				831F2CEF2276977400CA2226 /* HomeController.swift in Sources */,
+				831F2D102276989F00CA2226 /* MainCoordinator.swift in Sources */,
 				831F2CED2276977400CA2226 /* AppDelegate.swift in Sources */,
+				831F2D0E2276983600CA2226 /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,14 +233,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		831F2CF02276977400CA2226 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				831F2CF12276977400CA2226 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		831F2CF52276977600CA2226 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -361,6 +365,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AKA8832466;
 				INFOPLIST_FILE = TravelPlanner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -378,6 +383,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AKA8832466;
 				INFOPLIST_FILE = TravelPlanner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
