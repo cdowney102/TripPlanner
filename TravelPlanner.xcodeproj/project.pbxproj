@@ -24,6 +24,7 @@
 		83FA67A92277D09F00250D4D /* CreateCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FA67A82277D09F00250D4D /* CreateCoordinator.swift */; };
 		83FA67AB2277D11E00250D4D /* CreateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FA67AA2277D11E00250D4D /* CreateController.swift */; };
 		83FA67AF22792AA500250D4D /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FA67AE22792AA500250D4D /* EmptyView.swift */; };
+		83FA67B2227A2A7100250D4D /* TripsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FA67B1227A2A7100250D4D /* TripsDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		83FA67A82277D09F00250D4D /* CreateCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCoordinator.swift; sourceTree = "<group>"; };
 		83FA67AA2277D11E00250D4D /* CreateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateController.swift; sourceTree = "<group>"; };
 		83FA67AE22792AA500250D4D /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		83FA67B1227A2A7100250D4D /* TripsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		831F2CEB2276977400CA2226 /* TravelPlanner */ = {
 			isa = PBXGroup;
 			children = (
+				83FA67B0227A2A4400250D4D /* DataSource */,
 				83FA67A52277B20400250D4D /* Model */,
 				83FA67A22277B10800250D4D /* DBManager */,
 				83FA67A12277B0F000250D4D /* Controller */,
@@ -207,6 +210,14 @@
 				83FA67AE22792AA500250D4D /* EmptyView.swift */,
 			);
 			path = EmptyView;
+			sourceTree = "<group>";
+		};
+		83FA67B0227A2A4400250D4D /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				83FA67B1227A2A7100250D4D /* TripsDataSource.swift */,
+			);
+			path = DataSource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,6 +333,7 @@
 				831F2D1C22769E7D00CA2226 /* UIView+Extensions.swift in Sources */,
 				83FA67A92277D09F00250D4D /* CreateCoordinator.swift in Sources */,
 				83FA67AF22792AA500250D4D /* EmptyView.swift in Sources */,
+				83FA67B2227A2A7100250D4D /* TripsDataSource.swift in Sources */,
 				831F2D1922769E1D00CA2226 /* UILabel+Factory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,6 +14,8 @@ class EmptyView: UIView {
     override init(frame: CGRect) {
         super.init(frame: .zero)
         
+        translatesAutoresizingMaskIntoConstraints = false
+        
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "No trips planned currently"

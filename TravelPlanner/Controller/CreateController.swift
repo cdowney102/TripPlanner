@@ -51,5 +51,4 @@ class CreateController: UIViewController {
             coordinator?.didCancel()
         }
     }
-    
 }

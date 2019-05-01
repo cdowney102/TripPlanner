@@ -12,21 +12,75 @@ import UIKit
 class HomeView: UIView {
     
     var nextBtnAction: (() -> Void)?
+    let dataSource = TripsDataSource()
+    lazy var header = Header(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height * 0.17))
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         backgroundColor = .white
-        
-        let header = Header(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height * 0.17))
-        header.setupUI("My Trips", "Where to next?")
-        
-        addSubview(header)
+        setupHeader()
+        setupTrips()
     }
-    
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    lazy var collectionView: UICollectionView = {
+       let cv = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+        cv.translatesAutoresizingMaskIntoConstraints = false
+        cv.dataSource = dataSource
+        cv.delegate = self
+        cv.register(TripCell.self, forCellWithReuseIdentifier: TripCell.identifier)
+        return cv
+    }()
+}
+
+extension HomeView: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("selected \(indexPath.item)")
+    }
+}
+
+extension HomeView: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: frame.width - 30, height: 100)
+    }
+}
+
+extension HomeView {
+    private func setupHeader() {
+        header.setupUI("My Trips", "Where to next?")
+        addSubview(header)
+    }
+    
+    private func setupTrips() {
+        addSubview(collectionView)
+        NSLayoutConstraint.activate([
+            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            collectionView.topAnchor.constraint(equalTo: header.bottomAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
+            ])
+    }
+    
+    private func setupEmptyView() {
+        let empty = EmptyView(frame: frame)
+        addSubview(empty)
+        NSLayoutConstraint.activate([
+            empty.leadingAnchor.constraint(equalTo: leadingAnchor),
+            empty.trailingAnchor.constraint(equalTo: trailingAnchor),
+            empty.topAnchor.constraint(equalTo: header.bottomAnchor),
+            empty.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
+            ])
+    }
 }
