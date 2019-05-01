@@ -14,8 +14,9 @@ final class ButtonFactory {
     private let button: UIButton
     
     init(image: UIImage) {
-        self.button = UIButton()
-        self.button.setImage(image, for: .normal)
+        button = UIButton()
+        button.setImage(image, for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
     }
     
     func build() -> UIButton {

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class MainCoordinator: Coordinator {
+class MainCoordinator: NSObject, Coordinator, UINavigationControllerDelegate {
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
     
@@ -20,8 +20,27 @@ class MainCoordinator: Coordinator {
     
     func start() {
         #warning("grab data from DBManager and pass it -- may be empty")
+        navigationController.delegate = self
         let vc = HomeController()
         vc.mainCoordinator = self
         navigationController.pushViewController(vc, animated: true)
     }
+    
+    func create() {
+        let child = CreateCoordinator(navigationController: navigationController)
+        child.parentCoordinator = self
+        childCoordinators.append(child)
+        child.start()
+    }
+    
+    func childDidfinish(_ child: Coordinator) {
+        for (index, coordinator) in childCoordinators.enumerated() {
+            if coordinator === child {
+                childCoordinators.remove(at: index)
+                break
+            }
+        }
+        navigationController.popViewController(animated: true)
+    }
 }
+

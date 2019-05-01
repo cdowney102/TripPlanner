@@ -11,7 +11,7 @@
 		831F2CEF2276977400CA2226 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831F2CEE2276977400CA2226 /* HomeController.swift */; };
 		831F2CF42276977600CA2226 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 831F2CF32276977600CA2226 /* Assets.xcassets */; };
 		831F2CF72276977600CA2226 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 831F2CF52276977600CA2226 /* LaunchScreen.storyboard */; };
-		831F2D022276977600CA2226 /* TravelPlannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831F2D012276977600CA2226 /* TravelPlannerTests.swift */; };
+		831F2D022276977600CA2226 /* HeaderViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831F2D012276977600CA2226 /* HeaderViewTests.swift */; };
 		831F2D0E2276983600CA2226 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831F2D0D2276983600CA2226 /* Coordinator.swift */; };
 		831F2D102276989F00CA2226 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831F2D0F2276989F00CA2226 /* MainCoordinator.swift */; };
 		831F2D1322769B2D00CA2226 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831F2D1222769B2D00CA2226 /* HomeView.swift */; };
@@ -19,6 +19,11 @@
 		831F2D1922769E1D00CA2226 /* UILabel+Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831F2D1822769E1D00CA2226 /* UILabel+Factory.swift */; };
 		831F2D1C22769E7D00CA2226 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831F2D1B22769E7D00CA2226 /* UIView+Extensions.swift */; };
 		831F2D1E2276AADA00CA2226 /* UIButton+Factorty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831F2D1D2276AADA00CA2226 /* UIButton+Factorty.swift */; };
+		83FA67A42277B11900250D4D /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FA67A32277B11900250D4D /* DBManager.swift */; };
+		83FA67A72277B20B00250D4D /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FA67A62277B20B00250D4D /* Trip.swift */; };
+		83FA67A92277D09F00250D4D /* CreateCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FA67A82277D09F00250D4D /* CreateCoordinator.swift */; };
+		83FA67AB2277D11E00250D4D /* CreateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FA67AA2277D11E00250D4D /* CreateController.swift */; };
+		83FA67AF22792AA500250D4D /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FA67AE22792AA500250D4D /* EmptyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +44,7 @@
 		831F2CF62276977600CA2226 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		831F2CF82276977600CA2226 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		831F2CFD2276977600CA2226 /* TravelPlannerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravelPlannerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		831F2D012276977600CA2226 /* TravelPlannerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelPlannerTests.swift; sourceTree = "<group>"; };
+		831F2D012276977600CA2226 /* HeaderViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewTests.swift; sourceTree = "<group>"; };
 		831F2D032276977600CA2226 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		831F2D0D2276983600CA2226 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		831F2D0F2276989F00CA2226 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
@@ -48,6 +53,11 @@
 		831F2D1822769E1D00CA2226 /* UILabel+Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Factory.swift"; sourceTree = "<group>"; };
 		831F2D1B22769E7D00CA2226 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		831F2D1D2276AADA00CA2226 /* UIButton+Factorty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Factorty.swift"; sourceTree = "<group>"; };
+		83FA67A32277B11900250D4D /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
+		83FA67A62277B20B00250D4D /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		83FA67A82277D09F00250D4D /* CreateCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCoordinator.swift; sourceTree = "<group>"; };
+		83FA67AA2277D11E00250D4D /* CreateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateController.swift; sourceTree = "<group>"; };
+		83FA67AE22792AA500250D4D /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,12 +99,14 @@
 		831F2CEB2276977400CA2226 /* TravelPlanner */ = {
 			isa = PBXGroup;
 			children = (
+				83FA67A52277B20400250D4D /* Model */,
+				83FA67A22277B10800250D4D /* DBManager */,
+				83FA67A12277B0F000250D4D /* Controller */,
 				831F2D1A22769E6E00CA2226 /* Extensions */,
 				831F2D1722769E0900CA2226 /* Factories */,
 				831F2D1122769B1C00CA2226 /* View */,
 				831F2D0C2276982400CA2226 /* Coordinators */,
 				831F2CEC2276977400CA2226 /* AppDelegate.swift */,
-				831F2CEE2276977400CA2226 /* HomeController.swift */,
 				831F2CF32276977600CA2226 /* Assets.xcassets */,
 				831F2CF52276977600CA2226 /* LaunchScreen.storyboard */,
 				831F2CF82276977600CA2226 /* Info.plist */,
@@ -105,7 +117,7 @@
 		831F2D002276977600CA2226 /* TravelPlannerTests */ = {
 			isa = PBXGroup;
 			children = (
-				831F2D012276977600CA2226 /* TravelPlannerTests.swift */,
+				831F2D012276977600CA2226 /* HeaderViewTests.swift */,
 				831F2D032276977600CA2226 /* Info.plist */,
 			);
 			path = TravelPlannerTests;
@@ -116,6 +128,7 @@
 			children = (
 				831F2D0D2276983600CA2226 /* Coordinator.swift */,
 				831F2D0F2276989F00CA2226 /* MainCoordinator.swift */,
+				83FA67A82277D09F00250D4D /* CreateCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -124,7 +137,8 @@
 			isa = PBXGroup;
 			children = (
 				831F2D1422769DD700CA2226 /* Header */,
-				831F2D1222769B2D00CA2226 /* HomeView.swift */,
+				83FA67AC22792A8200250D4D /* Home */,
+				83FA67AD22792A9000250D4D /* EmptyView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -152,6 +166,47 @@
 				831F2D1B22769E7D00CA2226 /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		83FA67A12277B0F000250D4D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				831F2CEE2276977400CA2226 /* HomeController.swift */,
+				83FA67AA2277D11E00250D4D /* CreateController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		83FA67A22277B10800250D4D /* DBManager */ = {
+			isa = PBXGroup;
+			children = (
+				83FA67A32277B11900250D4D /* DBManager.swift */,
+			);
+			path = DBManager;
+			sourceTree = "<group>";
+		};
+		83FA67A52277B20400250D4D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				83FA67A62277B20B00250D4D /* Trip.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		83FA67AC22792A8200250D4D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				831F2D1222769B2D00CA2226 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		83FA67AD22792A9000250D4D /* EmptyView */ = {
+			isa = PBXGroup;
+			children = (
+				83FA67AE22792AA500250D4D /* EmptyView.swift */,
+			);
+			path = EmptyView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,14 +309,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83FA67A72277B20B00250D4D /* Trip.swift in Sources */,
+				83FA67AB2277D11E00250D4D /* CreateController.swift in Sources */,
 				831F2CEF2276977400CA2226 /* HomeController.swift in Sources */,
 				831F2D102276989F00CA2226 /* MainCoordinator.swift in Sources */,
 				831F2CED2276977400CA2226 /* AppDelegate.swift in Sources */,
 				831F2D1322769B2D00CA2226 /* HomeView.swift in Sources */,
 				831F2D1622769DDF00CA2226 /* Header.swift in Sources */,
+				83FA67A42277B11900250D4D /* DBManager.swift in Sources */,
 				831F2D1E2276AADA00CA2226 /* UIButton+Factorty.swift in Sources */,
 				831F2D0E2276983600CA2226 /* Coordinator.swift in Sources */,
 				831F2D1C22769E7D00CA2226 /* UIView+Extensions.swift in Sources */,
+				83FA67A92277D09F00250D4D /* CreateCoordinator.swift in Sources */,
+				83FA67AF22792AA500250D4D /* EmptyView.swift in Sources */,
 				831F2D1922769E1D00CA2226 /* UILabel+Factory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,7 +330,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				831F2D022276977600CA2226 /* TravelPlannerTests.swift in Sources */,
+				831F2D022276977600CA2226 /* HeaderViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +514,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AKA8832466;
 				INFOPLIST_FILE = TravelPlannerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -474,6 +535,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AKA8832466;
 				INFOPLIST_FILE = TravelPlannerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

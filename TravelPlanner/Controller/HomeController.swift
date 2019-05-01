@@ -18,8 +18,17 @@ class HomeController: UIViewController {
         let homeView = HomeView(frame: view.bounds)
         view.addSubview(homeView)
         
+        homeView.nextBtnAction = { [ weak self ] in
+            guard let strongSelf = self else { return }
+            strongSelf.next()
+        }
+        
     }
 
+    func next() {
+        print("coord next create")
+        mainCoordinator?.create()
+    }
 
 }
 

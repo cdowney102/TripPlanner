@@ -11,6 +11,8 @@ import UIKit
 
 class HomeView: UIView {
     
+    var nextBtnAction: (() -> Void)?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -20,8 +22,8 @@ class HomeView: UIView {
         header.setupUI("My Trips", "Where to next?")
         
         addSubview(header)
-        
     }
+    
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
