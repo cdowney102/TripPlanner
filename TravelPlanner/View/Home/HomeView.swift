@@ -12,6 +12,7 @@ import UIKit
 class HomeView: UIView {
     
     var nextBtnAction: (() -> Void)?
+    var didSelect: ((_ trip: Trip) -> ())?
     let dataSource = TripsDataSource()
     lazy var header = Header(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height * 0.17))
     
@@ -33,13 +34,15 @@ class HomeView: UIView {
         cv.dataSource = dataSource
         cv.delegate = self
         cv.register(TripCell.self, forCellWithReuseIdentifier: TripCell.identifier)
+        cv.showsVerticalScrollIndicator = false
         return cv
     }()
 }
 
 extension HomeView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("selected \(indexPath.item)")
+        let trip = dataSource.fetchTripAtIndex(indexPath.item)
+        didSelect?(trip)
     }
 }
 

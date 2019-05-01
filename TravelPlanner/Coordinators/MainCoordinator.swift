@@ -33,6 +33,14 @@ class MainCoordinator: NSObject, Coordinator, UINavigationControllerDelegate {
         child.start()
     }
     
+    func update(_ trip: Trip) {
+        let child = UpdateCoordinator(navigationController: navigationController)
+        child.parentCoordinator = self
+        child.trip = trip
+        childCoordinators.append(child)
+        child.start()
+    }
+    
     func childDidfinish(_ child: Coordinator) {
         for (index, coordinator) in childCoordinators.enumerated() {
             if coordinator === child {

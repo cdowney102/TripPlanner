@@ -23,6 +23,14 @@ class HomeController: UIViewController {
             strongSelf.next()
         }
         
+        homeView.didSelect = { trip in
+           self.update(trip)
+        }
+        
+    }
+    
+    func update(_ trip: Trip) {
+        mainCoordinator?.update(trip)
     }
 
     func next() {
