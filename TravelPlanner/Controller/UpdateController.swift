@@ -17,7 +17,8 @@ class UpdateController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .cyan
-        print(trip)
+        let updateView = UpdateView(frame: view.frame)
+        updateView.header.buttonType = .remove
+        view.addSubview(updateView)
     }
 }

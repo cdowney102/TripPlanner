@@ -28,6 +28,10 @@
 		83FA67B4227A4CCF00250D4D /* UpdateCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FA67B3227A4CCF00250D4D /* UpdateCoordinator.swift */; };
 		83FA67B6227A4D1200250D4D /* UpdateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FA67B5227A4D1200250D4D /* UpdateController.swift */; };
 		83FA67B8227A584700250D4D /* TripCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FA67B7227A584700250D4D /* TripCell.swift */; };
+		83FA67BB227A60F500250D4D /* UpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FA67BA227A60F500250D4D /* UpdateView.swift */; };
+		83FA67BD227A6EDE00250D4D /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FA67BC227A6EDE00250D4D /* Activity.swift */; };
+		83FA67BF227A720A00250D4D /* ActivityDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FA67BE227A720A00250D4D /* ActivityDataSource.swift */; };
+		83FA67C1227A736500250D4D /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FA67C0227A736500250D4D /* ActivityCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +70,10 @@
 		83FA67B3227A4CCF00250D4D /* UpdateCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCoordinator.swift; sourceTree = "<group>"; };
 		83FA67B5227A4D1200250D4D /* UpdateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateController.swift; sourceTree = "<group>"; };
 		83FA67B7227A584700250D4D /* TripCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripCell.swift; sourceTree = "<group>"; };
+		83FA67BA227A60F500250D4D /* UpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateView.swift; sourceTree = "<group>"; };
+		83FA67BC227A6EDE00250D4D /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		83FA67BE227A720A00250D4D /* ActivityDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDataSource.swift; sourceTree = "<group>"; };
+		83FA67C0227A736500250D4D /* ActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +154,7 @@
 		831F2D1122769B1C00CA2226 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				83FA67B9227A60EA00250D4D /* UpdateView */,
 				831F2D1422769DD700CA2226 /* Header */,
 				83FA67AC22792A8200250D4D /* Home */,
 				83FA67AD22792A9000250D4D /* EmptyView */,
@@ -201,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				83FA67A62277B20B00250D4D /* Trip.swift */,
+				83FA67BC227A6EDE00250D4D /* Activity.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -225,8 +235,18 @@
 			isa = PBXGroup;
 			children = (
 				83FA67B1227A2A7100250D4D /* TripsDataSource.swift */,
+				83FA67BE227A720A00250D4D /* ActivityDataSource.swift */,
 			);
 			path = DataSource;
+			sourceTree = "<group>";
+		};
+		83FA67B9227A60EA00250D4D /* UpdateView */ = {
+			isa = PBXGroup;
+			children = (
+				83FA67BA227A60F500250D4D /* UpdateView.swift */,
+				83FA67C0227A736500250D4D /* ActivityCell.swift */,
+			);
+			path = UpdateView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,15 +349,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83FA67C1227A736500250D4D /* ActivityCell.swift in Sources */,
 				83FA67A72277B20B00250D4D /* Trip.swift in Sources */,
 				83FA67B6227A4D1200250D4D /* UpdateController.swift in Sources */,
+				83FA67BF227A720A00250D4D /* ActivityDataSource.swift in Sources */,
 				83FA67AB2277D11E00250D4D /* CreateController.swift in Sources */,
 				831F2CEF2276977400CA2226 /* HomeController.swift in Sources */,
 				831F2D102276989F00CA2226 /* MainCoordinator.swift in Sources */,
 				831F2CED2276977400CA2226 /* AppDelegate.swift in Sources */,
 				831F2D1322769B2D00CA2226 /* HomeView.swift in Sources */,
 				831F2D1622769DDF00CA2226 /* Header.swift in Sources */,
+				83FA67BB227A60F500250D4D /* UpdateView.swift in Sources */,
 				83FA67A42277B11900250D4D /* DBManager.swift in Sources */,
+				83FA67BD227A6EDE00250D4D /* Activity.swift in Sources */,
 				831F2D1E2276AADA00CA2226 /* UIButton+Factorty.swift in Sources */,
 				83FA67B4227A4CCF00250D4D /* UpdateCoordinator.swift in Sources */,
 				831F2D0E2276983600CA2226 /* Coordinator.swift in Sources */,

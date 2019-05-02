@@ -62,7 +62,7 @@ extension HomeView: UICollectionViewDelegateFlowLayout {
 
 extension HomeView {
     private func setupHeader() {
-        header.setupUI("My Trips", "Where to next?")
+        header.setupUI("My Trips", "Where to next?", "")
         addSubview(header)
     }
     
