@@ -14,7 +14,8 @@ class ActivityDataSource: NSObject, UITableViewDataSource {
     var activities = [Activity]()
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3 // activities.count
+        activities = [Activity(),Activity()]
+        return activities.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -19,6 +19,8 @@
 		831F2D1922769E1D00CA2226 /* UILabel+Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831F2D1822769E1D00CA2226 /* UILabel+Factory.swift */; };
 		831F2D1C22769E7D00CA2226 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831F2D1B22769E7D00CA2226 /* UIView+Extensions.swift */; };
 		831F2D1E2276AADA00CA2226 /* UIButton+Factorty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831F2D1D2276AADA00CA2226 /* UIButton+Factorty.swift */; };
+		834B251C227BB15100EFC1E0 /* EditCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834B251B227BB15100EFC1E0 /* EditCoordinator.swift */; };
+		834B251E227BB1A300EFC1E0 /* EditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834B251D227BB1A300EFC1E0 /* EditController.swift */; };
 		83FA67A42277B11900250D4D /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FA67A32277B11900250D4D /* DBManager.swift */; };
 		83FA67A72277B20B00250D4D /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FA67A62277B20B00250D4D /* Trip.swift */; };
 		83FA67A92277D09F00250D4D /* CreateCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FA67A82277D09F00250D4D /* CreateCoordinator.swift */; };
@@ -61,6 +63,8 @@
 		831F2D1822769E1D00CA2226 /* UILabel+Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Factory.swift"; sourceTree = "<group>"; };
 		831F2D1B22769E7D00CA2226 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		831F2D1D2276AADA00CA2226 /* UIButton+Factorty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Factorty.swift"; sourceTree = "<group>"; };
+		834B251B227BB15100EFC1E0 /* EditCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCoordinator.swift; sourceTree = "<group>"; };
+		834B251D227BB1A300EFC1E0 /* EditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditController.swift; sourceTree = "<group>"; };
 		83FA67A32277B11900250D4D /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		83FA67A62277B20B00250D4D /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		83FA67A82277D09F00250D4D /* CreateCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCoordinator.swift; sourceTree = "<group>"; };
@@ -147,6 +151,7 @@
 				831F2D0F2276989F00CA2226 /* MainCoordinator.swift */,
 				83FA67A82277D09F00250D4D /* CreateCoordinator.swift */,
 				83FA67B3227A4CCF00250D4D /* UpdateCoordinator.swift */,
+				834B251B227BB15100EFC1E0 /* EditCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -194,6 +199,7 @@
 				831F2CEE2276977400CA2226 /* HomeController.swift */,
 				83FA67AA2277D11E00250D4D /* CreateController.swift */,
 				83FA67B5227A4D1200250D4D /* UpdateController.swift */,
+				834B251D227BB1A300EFC1E0 /* EditController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -350,6 +356,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83FA67C1227A736500250D4D /* ActivityCell.swift in Sources */,
+				834B251E227BB1A300EFC1E0 /* EditController.swift in Sources */,
 				83FA67A72277B20B00250D4D /* Trip.swift in Sources */,
 				83FA67B6227A4D1200250D4D /* UpdateController.swift in Sources */,
 				83FA67BF227A720A00250D4D /* ActivityDataSource.swift in Sources */,
@@ -365,6 +372,7 @@
 				831F2D1E2276AADA00CA2226 /* UIButton+Factorty.swift in Sources */,
 				83FA67B4227A4CCF00250D4D /* UpdateCoordinator.swift in Sources */,
 				831F2D0E2276983600CA2226 /* Coordinator.swift in Sources */,
+				834B251C227BB15100EFC1E0 /* EditCoordinator.swift in Sources */,
 				831F2D1C22769E7D00CA2226 /* UIView+Extensions.swift in Sources */,
 				83FA67A92277D09F00250D4D /* CreateCoordinator.swift in Sources */,
 				83FA67AF22792AA500250D4D /* EmptyView.swift in Sources */,

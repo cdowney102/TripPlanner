@@ -36,4 +36,13 @@ class UpdateCoordinator: Coordinator {
     func didCancel() {
         parentCoordinator?.childDidfinish(self)
     }
+    
+    func editActivity(_ activityAtIndex: Int) {
+        let child = EditCoordinator(navigationController: navigationController)
+        child.parentCoordinator = self
+        child.trip = trip
+        child.activityAtIndex = activityAtIndex
+        childCoordinators.append(child)
+        child.start()
+    }
 }

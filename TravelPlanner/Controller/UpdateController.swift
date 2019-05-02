@@ -20,5 +20,9 @@ class UpdateController: UIViewController {
         let updateView = UpdateView(frame: view.frame)
         updateView.header.buttonType = .remove
         view.addSubview(updateView)
+        
+        updateView.didSelectTripAt = { index in
+            self.coordinator?.editActivity(index)
+        }
     }
 }

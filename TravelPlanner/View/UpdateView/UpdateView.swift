@@ -12,12 +12,14 @@ import UIKit
 class UpdateView: UIView {
     
     lazy var header = Header(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height * 0.17))
+    var didSelectTripAt: ((_ row: Int) -> ())?
     let dataSource = ActivityDataSource()
+    var addButton: UIButton!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         setupHeader()
+        setupButton()
         setupTableView()
     }
     
@@ -28,6 +30,7 @@ class UpdateView: UIView {
     lazy var tableView: UITableView = {
         let tv = UITableView(frame: .zero)
         tv.translatesAutoresizingMaskIntoConstraints = false
+        tv.showsVerticalScrollIndicator = false
         tv.dataSource = dataSource
         tv.delegate = self
         tv.register(ActivityCell.self, forCellReuseIdentifier: ActivityCell.identifier)
@@ -47,16 +50,26 @@ extension UpdateView {
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
             tableView.topAnchor.constraint(equalTo: header.bottomAnchor),
-            tableView.heightAnchor.constraint(equalToConstant: frame.height / 2)
-            #warning("this will be pinned to the button at bottom instead of height")
+            tableView.bottomAnchor.constraint(equalTo: addButton.topAnchor)
+            ])
+    }
+    
+    private func setupButton() {
+        addButton = ButtonFactory(image: UIImage(named: "add.png")!).build()
+        addSubview(addButton)
+        NSLayoutConstraint.activate([
+            addButton.centerXAnchor.constraint(equalTo: centerXAnchor),
+            addButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -25),
+            addButton.heightAnchor.constraint(equalToConstant: 75),
+            addButton.widthAnchor.constraint(equalToConstant: 75)
             ])
     }
 }
 
 extension UpdateView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let activity = dataSource.fetchActivityAtRow(indexPath.row)
-        print(activity)
+//        let activity = dataSource.fetchActivityAtRow(indexPath.row)
+        didSelectTripAt?(indexPath.row)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
