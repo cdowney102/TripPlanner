@@ -1,21 +1,22 @@
 //
-//  UpdateCoordinator.swift
+//  EditCoordinator.swift
 //  TravelPlanner
 //
-//  Created by christopher downey on 5/1/19.
+//  Created by christopher downey on 5/2/19.
 //  Copyright © 2019 christopher downey. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class UpdateCoordinator: Coordinator {
+class EditActivityCoordinator: Coordinator {
     
-    weak var parentCoordinator: MainCoordinator?
+    weak var parentCoordinator: TripOverviewCoordinator?
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
     
     var trip: Trip!
+    var activityAtIndex: Int!
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -23,26 +24,24 @@ class UpdateCoordinator: Coordinator {
     }
     
     func start() {
-        let vc = UpdateController()
+        let vc = EditActivityController()
         vc.coordinator = self
         vc.trip = trip
+        vc.activityAtIndex = activityAtIndex
         navigationController.pushViewController(vc, animated: true)
     }
     
-    func didFinishCreating(trip: Trip) {
+    func activityWasUpdated() {
         parentCoordinator?.childDidfinish(self)
     }
     
-    func didCancel() {
-        parentCoordinator?.childDidfinish(self)
-    }
-    
-    func editActivity(_ activityAtIndex: Int) {
-        let child = EditCoordinator(navigationController: navigationController)
-        child.parentCoordinator = self
-        child.trip = trip
-        child.activityAtIndex = activityAtIndex
-        childCoordinators.append(child)
-        child.start()
+    func childDidfinish(_ child: Coordinator) {
+        for (index, coordinator) in childCoordinators.enumerated() {
+            if coordinator === child {
+                childCoordinators.remove(at: index)
+                break
+            }
+        }
+        navigationController.popViewController(animated: true)
     }
 }

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class CreateCoordinator: Coordinator {
+class AddTripCoordinator: Coordinator {
     
     weak var parentCoordinator: MainCoordinator?
     var childCoordinators = [Coordinator]()
@@ -21,7 +21,7 @@ class CreateCoordinator: Coordinator {
     }
     
     func start() {
-        let vc = CreateController()
+        let vc = AddTripController()
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }

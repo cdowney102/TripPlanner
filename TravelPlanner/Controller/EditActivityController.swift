@@ -10,14 +10,15 @@ import UIKit
 
 class EditActivityController: UIViewController {
 
-    weak var coordinator: EditCoordinator?
+    weak var coordinator: EditActivityCoordinator?
     var trip: Trip!
     var activityAtIndex: Int!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func loadView() {
+        super.loadView()
         
         let editView = EditActivityView(frame: view.frame)
         view.addSubview(editView)
+        
     }
 }

@@ -9,10 +9,11 @@
 import Foundation
 import UIKit
 
-class UpdateView: UIView {
+class TripOverviewView: UIView {
     
     lazy var header = Header(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height * 0.17))
     var didSelectTripAt: ((_ row: Int) -> ())?
+    var addBtnAction: (() -> Void)?
     let dataSource = ActivityDataSource()
     var addButton: UIButton!
     
@@ -38,7 +39,7 @@ class UpdateView: UIView {
     }()
 }
 
-extension UpdateView {
+extension TripOverviewView {
     private func setupHeader() {
         header.setupUI("Los Angeles", "Sept 9 - 11", "$122")
         addSubview(header)
@@ -56,6 +57,7 @@ extension UpdateView {
     
     private func setupButton() {
         addButton = ButtonFactory(image: UIImage(named: "add.png")!).build()
+        addButton.addTarget(self, action: #selector(addTapped), for: .touchUpInside)
         addSubview(addButton)
         NSLayoutConstraint.activate([
             addButton.centerXAnchor.constraint(equalTo: centerXAnchor),
@@ -64,9 +66,13 @@ extension UpdateView {
             addButton.widthAnchor.constraint(equalToConstant: 75)
             ])
     }
+    
+    @objc private func addTapped() {
+        addBtnAction?()
+    }
 }
 
-extension UpdateView: UITableViewDelegate {
+extension TripOverviewView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        let activity = dataSource.fetchActivityAtRow(indexPath.row)
         didSelectTripAt?(indexPath.row)

@@ -27,14 +27,14 @@ class MainCoordinator: NSObject, Coordinator, UINavigationControllerDelegate {
     }
     
     func create() {
-        let child = CreateCoordinator(navigationController: navigationController)
+        let child = AddTripCoordinator(navigationController: navigationController)
         child.parentCoordinator = self
         childCoordinators.append(child)
         child.start()
     }
     
-    func update(_ trip: Trip) {
-        let child = UpdateCoordinator(navigationController: navigationController)
+    func overview(_ trip: Trip) {
+        let child = TripOverviewCoordinator(navigationController: navigationController)
         child.parentCoordinator = self
         child.trip = trip
         childCoordinators.append(child)

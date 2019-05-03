@@ -1,5 +1,5 @@
 //
-//  EditCoordinator.swift
+//  AddActivityCoordinator.swift
 //  TravelPlanner
 //
 //  Created by christopher downey on 5/2/19.
@@ -9,14 +9,13 @@
 import Foundation
 import UIKit
 
-class EditCoordinator: Coordinator {
+class AddActivityCoordinator: Coordinator {
     
-    weak var parentCoordinator: UpdateCoordinator?
+    weak var parentCoordinator: TripOverviewCoordinator?
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
     
     var trip: Trip!
-    var activityAtIndex: Int!
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -24,10 +23,13 @@ class EditCoordinator: Coordinator {
     }
     
     func start() {
-        let vc = EditActivityController()
+        let vc = AddActivityController()
         vc.coordinator = self
         vc.trip = trip
-        vc.activityAtIndex = activityAtIndex
         navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func activityWasAdded() {
+        parentCoordinator?.childDidfinish(self)
     }
 }

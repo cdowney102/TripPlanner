@@ -8,23 +8,17 @@
 
 import UIKit
 
-class CreateController: UIViewController {
+class AddTripController: UIViewController {
     
     deinit {
         print("create gonce")
     }
 
-    weak var coordinator: CreateCoordinator?
+    weak var coordinator: AddTripCoordinator?
     private var trip: Trip?
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        
-        
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func loadView() {
+        super.loadView()
 
         // Do any additional setup after loading the view.
         view.backgroundColor = .green

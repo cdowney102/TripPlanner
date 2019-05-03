@@ -12,8 +12,8 @@ class HomeController: UIViewController {
     
     weak var mainCoordinator: MainCoordinator?
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func loadView() {
+        super.loadView()
         
         let homeView = HomeView(frame: view.bounds)
         view.addSubview(homeView)
@@ -30,7 +30,7 @@ class HomeController: UIViewController {
     }
     
     func update(_ trip: Trip) {
-        mainCoordinator?.update(trip)
+        mainCoordinator?.overview(trip)
     }
 
     func next() {
