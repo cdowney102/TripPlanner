@@ -24,7 +24,7 @@ class EditCoordinator: Coordinator {
     }
     
     func start() {
-        let vc = EditController()
+        let vc = EditActivityController()
         vc.coordinator = self
         vc.trip = trip
         vc.activityAtIndex = activityAtIndex

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EditController: UIViewController {
+class EditActivityController: UIViewController {
 
     weak var coordinator: EditCoordinator?
     var trip: Trip!
@@ -17,7 +17,7 @@ class EditController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .green
-        print(activityAtIndex)
+        let editView = EditActivityView(frame: view.frame)
+        view.addSubview(editView)
     }
 }
