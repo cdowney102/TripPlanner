@@ -18,17 +18,12 @@ class HomeController: UIViewController {
         let homeView = HomeView(frame: view.bounds)
         view.addSubview(homeView)
         
-        homeView.nextBtnAction = { [ weak self ] in
-            guard let strongSelf = self else { return }
-            strongSelf.next()
+        homeView.didSelect = { [ weak self ] trip in
+            self?.update(trip)
         }
         
-        homeView.didSelect = { trip in
-           self.update(trip)
-        }
-        
-        homeView.header.btnAction = {
-            print("add trip")
+        homeView.header.btnAction = { [ weak self ] in
+            self?.create()
         }
         
     }
@@ -37,8 +32,7 @@ class HomeController: UIViewController {
         mainCoordinator?.overview(trip)
     }
 
-    func next() {
-        print("coord next create")
+    func create() {
         mainCoordinator?.create()
     }
 

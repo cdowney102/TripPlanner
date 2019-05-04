@@ -20,29 +20,8 @@ class AddTripController: UIViewController {
     override func loadView() {
         super.loadView()
 
-        // Do any additional setup after loading the view.
-        view.backgroundColor = .green
-        ssetupButton()
+        let addView = AddTripView(frame: view.frame)
+        view.addSubview(addView)
         
-    }
-    
-    func ssetupButton() {
-        let button = UIButton(frame: .zero)
-        view.addSubview(button)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        button.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        button.setTitle("next", for: .normal)
-        button.setTitleColor(.black, for: .normal)
-        button.addTarget(self, action: #selector(nextTapped), for: .touchUpInside)
-    }
-    
-    @objc func nextTapped() {
-        print("go next")
-        if let trip = trip {
-            coordinator?.didFinishCreating(trip: trip)
-        } else {
-            coordinator?.didCancel()
-        }
     }
 }

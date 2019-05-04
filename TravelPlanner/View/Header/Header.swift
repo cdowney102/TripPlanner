@@ -49,6 +49,7 @@ extension Header {
         backButton = ButtonFactory(image: UIImage(named: "left-arrow.png")!).build()
         
         backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         
         addSubviews(titleLabel, subtitleLabel, estimatedCostLabel, button, backButton)
         
@@ -82,6 +83,10 @@ extension Header {
     
     @objc private func backButtonTapped() {
         backBtnAction?()
+    }
+    
+    @objc private func buttonTapped() {
+        btnAction?()
     }
     
     func updateButton() {
