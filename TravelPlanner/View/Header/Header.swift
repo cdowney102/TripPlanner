@@ -24,9 +24,10 @@ final class Header: UIView {
     var subtitleLabel: UILabel!
     var estimatedCostLabel: UILabel!
     var button: UIButton!
+    var backButton: UIButton!
     
-    var addBtnAction: (() -> Void)?
-    var deleteBtnAction: (() -> Void)?
+    var btnAction: (() -> Void)?
+    var backBtnAction: (() -> Void)?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -45,11 +46,19 @@ extension Header {
         subtitleLabel = LabelFactory(text: subTitle, fontColor: .black, font: UIFont.systemFont(ofSize: 14)).build()
         estimatedCostLabel = LabelFactory(text: cost, fontColor: .black, font: UIFont.systemFont(ofSize: 14)).build()
         button = ButtonFactory(image: UIImage(named: "add.png")!).build()
+        backButton = ButtonFactory(image: UIImage(named: "left-arrow.png")!).build()
         
-        addSubviews(titleLabel, subtitleLabel, estimatedCostLabel, button)
+        backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+        
+        addSubviews(titleLabel, subtitleLabel, estimatedCostLabel, button, backButton)
         
         NSLayoutConstraint.activate([
-            estimatedCostLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
+            backButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            backButton.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 15),
+            backButton.heightAnchor.constraint(equalToConstant: 35),
+            backButton.widthAnchor.constraint(equalToConstant: 35),
+            
+            estimatedCostLabel.leadingAnchor.constraint(equalTo: backButton.trailingAnchor, constant: 5),
             estimatedCostLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
             estimatedCostLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5),
             estimatedCostLabel.heightAnchor.constraint(equalToConstant: 25),
@@ -71,15 +80,16 @@ extension Header {
             ])
     }
     
+    @objc private func backButtonTapped() {
+        backBtnAction?()
+    }
+    
     func updateButton() {
         switch buttonType {
         case .add:
             button.setImage(UIImage(named: "add.png"), for: .normal)
-            break
-            #warning("add actions here also")
         case .remove:
             button.setImage(UIImage(named: "delete.png"), for: .normal)
-            break
         }
     }
 }

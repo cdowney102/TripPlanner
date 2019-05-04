@@ -64,6 +64,7 @@ extension HomeView {
     private func setupHeader() {
         header.setupUI("My Trips", "Where to next?", "")
         addSubview(header)
+        header.backButton.isHidden = true
     }
     
     private func setupTrips() {

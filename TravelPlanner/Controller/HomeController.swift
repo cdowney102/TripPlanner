@@ -27,6 +27,10 @@ class HomeController: UIViewController {
            self.update(trip)
         }
         
+        homeView.header.btnAction = {
+            print("add trip")
+        }
+        
     }
     
     func update(_ trip: Trip) {

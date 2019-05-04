@@ -35,6 +35,10 @@ class EditActivityCoordinator: Coordinator {
         parentCoordinator?.childDidfinish(self)
     }
     
+    func didCancel() {
+        parentCoordinator?.childDidfinish(self)
+    }
+    
     func childDidfinish(_ child: Coordinator) {
         for (index, coordinator) in childCoordinators.enumerated() {
             if coordinator === child {

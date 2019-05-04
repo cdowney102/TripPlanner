@@ -21,12 +21,20 @@ class TripOverviewController: UIViewController {
         tripOverviewView.header.buttonType = .remove
         view.addSubview(tripOverviewView)
         
-        tripOverviewView.didSelectTripAt = { index in
-            self.coordinator?.editActivity(index)
+        tripOverviewView.didSelectTripAt = { [ weak self ] index in
+            guard let strongSelf = self else { return }
+            strongSelf.coordinator?.editActivity(index)
         }
         
-        tripOverviewView.addBtnAction = {
-            self.coordinator?.addActivity()
+        tripOverviewView.addBtnAction = { [ weak self ] in
+            guard let strongSelf = self else { return }
+            strongSelf.coordinator?.addActivity()
+        }
+
+        tripOverviewView.header.backBtnAction = { [ weak self ] in
+            print("back")
+            guard let strongSelf = self else { return }
+            strongSelf.coordinator?.didCancel()
         }
     }
 }
