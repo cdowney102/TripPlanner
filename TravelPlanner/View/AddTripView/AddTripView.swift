@@ -12,11 +12,14 @@ import UIKit
 class AddTripView: UIView {
     
     lazy var header = Header(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height * 0.17))
-    let addButton = ButtonFactory(image: UIImage(named: "add.png")!).build()
-    let destinationTextField = TextFieldFactory(placeholder: "Destination").build()
-    let tripNameTextField = TextFieldFactory(placeholder: "Trip nickname").build()
-    let tripStartDate = TextFieldFactory(placeholder: "Start Date").build()
-    let tripEndDate = TextFieldFactory(placeholder: "End Date").build()
+    private let addButton = ButtonFactory(image: UIImage(named: "add.png")!).build()
+    private let destinationTextField = TextFieldFactory(placeholder: "Destination").build()
+    private let tripNameTextField = TextFieldFactory(placeholder: "Trip nickname").build()
+    private let tripStartDate = TextFieldFactory(placeholder: "Start Date").build()
+    private let tripEndDate = TextFieldFactory(placeholder: "End Date").build()
+    private let dateFormatter = DateFormatterFactory(format: "MMM d, yyyy").build()
+    private var startDatePicker = DatePickerFactory().build()
+    private var endDatePicker = DatePickerFactory().build()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -24,6 +27,7 @@ class AddTripView: UIView {
         setupHeader()
         setupButton()
         setupLabels()
+        setupDatePicker()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -73,5 +77,40 @@ extension AddTripView {
             addButton.heightAnchor.constraint(equalToConstant: 45),
             addButton.widthAnchor.constraint(equalToConstant: 45)
             ])
+    }
+    
+    private func setupDatePicker() {
+
+        let startToolbar = ToolBarFactory().build()
+        let endToolbar = ToolBarFactory().build()
+        
+        let startDateDoneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(startDonePicking))
+        let endDateDoneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(endDonePicking))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let startCancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker))
+        let endCancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker))
+        
+        startToolbar.setItems([startDateDoneButton,spaceButton,startCancelButton], animated: false)
+        endToolbar.setItems([endDateDoneButton,spaceButton,endCancelButton], animated: false)
+        
+        tripStartDate.inputAccessoryView = startToolbar
+        tripStartDate.inputView = startDatePicker
+
+        tripEndDate.inputAccessoryView = endToolbar
+        tripEndDate.inputView = endDatePicker
+    }
+    
+    @objc private func startDonePicking() {
+        tripStartDate.text = dateFormatter.string(from: startDatePicker.date)
+        endEditing(true)
+    }
+    
+    @objc private func endDonePicking() {
+        tripEndDate.text = dateFormatter.string(from: endDatePicker.date)
+        endEditing(true)
+    }
+    
+    @objc private func cancelDatePicker() {
+        endEditing(true)
     }
 }

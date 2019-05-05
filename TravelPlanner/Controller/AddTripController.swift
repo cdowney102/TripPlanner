@@ -23,5 +23,9 @@ class AddTripController: UIViewController {
         let addView = AddTripView(frame: view.frame)
         view.addSubview(addView)
         
+        addView.header.backBtnAction = { [ weak self ] in
+            self?.coordinator?.didCancel()
+        }
+        
     }
 }
