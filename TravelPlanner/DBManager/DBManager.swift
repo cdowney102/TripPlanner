@@ -12,7 +12,7 @@ import UIKit
 class DBManager {
     
     func get() -> [Trip] {
-        return [Trip()]
+        return []
     }
     
     func post(trip: Trip) {

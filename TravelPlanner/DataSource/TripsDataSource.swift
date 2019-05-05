@@ -14,11 +14,6 @@ class TripsDataSource: NSObject, UICollectionViewDataSource {
     var trips = [Trip]()
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        trips = [
-            Trip(),
-            Trip(),
-            Trip()
-        ]
         return trips.count
     }
     

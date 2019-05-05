@@ -9,5 +9,6 @@
 import Foundation
 
 struct Activity {
-    
+    var name: String
+    var estimatedCost: String
 }

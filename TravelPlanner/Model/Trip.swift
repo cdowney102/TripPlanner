@@ -10,5 +10,14 @@ import Foundation
 import UIKit
 
 struct Trip {
-    
+    var id: String
+    var startDate: String
+    var endDate: String
+    var destination: String
+    var tripName: String
+    var activities: [Activity]
+    var estimatedCost: String {
+        let cost = activities.map { Int($0.estimatedCost) ?? 0 }.reduce(0, +)
+        return String(describing: cost)
+    }
 }
