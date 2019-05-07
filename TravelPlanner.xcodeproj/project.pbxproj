@@ -30,6 +30,8 @@
 		83DB902C227EA84C003A68DE /* DateFormatter+Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DB902B227EA84C003A68DE /* DateFormatter+Factory.swift */; };
 		83DB902E227EAB8B003A68DE /* DatePicker+Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DB902D227EAB8B003A68DE /* DatePicker+Factory.swift */; };
 		83DB9030227EB313003A68DE /* ToolBar+Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DB902F227EB313003A68DE /* ToolBar+Factory.swift */; };
+		83DB903322811CBF003A68DE /* TextFieldTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DB903222811CBF003A68DE /* TextFieldTypes.swift */; };
+		83DB903522811D43003A68DE /* TextFieldValidators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DB903422811D43003A68DE /* TextFieldValidators.swift */; };
 		83FA67A42277B11900250D4D /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FA67A32277B11900250D4D /* DBManager.swift */; };
 		83FA67A72277B20B00250D4D /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FA67A62277B20B00250D4D /* Trip.swift */; };
 		83FA67A92277D09F00250D4D /* AddTripCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FA67A82277D09F00250D4D /* AddTripCoordinator.swift */; };
@@ -83,6 +85,8 @@
 		83DB902B227EA84C003A68DE /* DateFormatter+Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Factory.swift"; sourceTree = "<group>"; };
 		83DB902D227EAB8B003A68DE /* DatePicker+Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DatePicker+Factory.swift"; sourceTree = "<group>"; };
 		83DB902F227EB313003A68DE /* ToolBar+Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToolBar+Factory.swift"; sourceTree = "<group>"; };
+		83DB903222811CBF003A68DE /* TextFieldTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTypes.swift; sourceTree = "<group>"; };
+		83DB903422811D43003A68DE /* TextFieldValidators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldValidators.swift; sourceTree = "<group>"; };
 		83FA67A32277B11900250D4D /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		83FA67A62277B20B00250D4D /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		83FA67A82277D09F00250D4D /* AddTripCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTripCoordinator.swift; sourceTree = "<group>"; };
@@ -137,6 +141,7 @@
 		831F2CEB2276977400CA2226 /* TravelPlanner */ = {
 			isa = PBXGroup;
 			children = (
+				83DB903122811CA8003A68DE /* Helpers */,
 				83FA67B0227A2A4400250D4D /* DataSource */,
 				83FA67A52277B20400250D4D /* Model */,
 				83FA67A22277B10800250D4D /* DBManager */,
@@ -241,6 +246,15 @@
 				83DB9026227E4093003A68DE /* AddTripView.swift */,
 			);
 			path = AddTripView;
+			sourceTree = "<group>";
+		};
+		83DB903122811CA8003A68DE /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				83DB903222811CBF003A68DE /* TextFieldTypes.swift */,
+				83DB903422811D43003A68DE /* TextFieldValidators.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		83FA67A12277B0F000250D4D /* Controller */ = {
@@ -428,11 +442,13 @@
 				831F2D1E2276AADA00CA2226 /* UIButton+Factorty.swift in Sources */,
 				83FA67B4227A4CCF00250D4D /* TripOverviewCoordinator.swift in Sources */,
 				831F2D0E2276983600CA2226 /* Coordinator.swift in Sources */,
+				83DB903522811D43003A68DE /* TextFieldValidators.swift in Sources */,
 				834B2525227BD94000EFC1E0 /* AddActivityController.swift in Sources */,
 				834B2523227BC96200EFC1E0 /* UITextField+Factory.swift in Sources */,
 				834B252A227BDBCF00EFC1E0 /* AddActivityCoordinator.swift in Sources */,
 				834B251C227BB15100EFC1E0 /* EditActivityCoordinator.swift in Sources */,
 				83DB9030227EB313003A68DE /* ToolBar+Factory.swift in Sources */,
+				83DB903322811CBF003A68DE /* TextFieldTypes.swift in Sources */,
 				831F2D1C22769E7D00CA2226 /* UIView+Extensions.swift in Sources */,
 				83FA67A92277D09F00250D4D /* AddTripCoordinator.swift in Sources */,
 				83FA67AF22792AA500250D4D /* EmptyView.swift in Sources */,

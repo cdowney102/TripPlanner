@@ -12,6 +12,7 @@ import UIKit
 class AddTripView: UIView {
     
     lazy var header = Header(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height * 0.17))
+    var addTripBtnAction: (() -> Void)?
     private let addButton = ButtonFactory(image: UIImage(named: "add.png")!).build()
     private let destinationTextField = TextFieldFactory(placeholder: "Destination").build()
     private let tripNameTextField = TextFieldFactory(placeholder: "Trip nickname").build()
@@ -98,6 +99,10 @@ extension AddTripView {
 
         tripEndDate.inputAccessoryView = endToolbar
         tripEndDate.inputView = endDatePicker
+    }
+    
+    @objc private func addTrip() {
+        addTripBtnAction?()
     }
     
     @objc private func startDonePicking() {

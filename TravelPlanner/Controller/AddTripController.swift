@@ -9,10 +9,6 @@
 import UIKit
 
 class AddTripController: UIViewController {
-    
-    deinit {
-        print("create gonce")
-    }
 
     weak var coordinator: AddTripCoordinator?
     private var trip: Trip?
@@ -27,5 +23,8 @@ class AddTripController: UIViewController {
             self?.coordinator?.didCancel()
         }
         
+        addView.addTripBtnAction = { [ weak self ] in
+            print("add trip")
+        }
     }
 }

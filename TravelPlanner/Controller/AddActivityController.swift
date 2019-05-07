@@ -20,5 +20,4 @@ class AddActivityController: UIViewController {
         let addActivityView = AddActivityView(frame: view.frame)
         view.addSubview(addActivityView)
     }
-
 }
