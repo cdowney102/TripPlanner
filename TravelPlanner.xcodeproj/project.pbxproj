@@ -26,13 +26,14 @@
 		834B2525227BD94000EFC1E0 /* AddActivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834B2524227BD94000EFC1E0 /* AddActivityController.swift */; };
 		834B2528227BD95E00EFC1E0 /* AddActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834B2527227BD95E00EFC1E0 /* AddActivityView.swift */; };
 		834B252A227BDBCF00EFC1E0 /* AddActivityCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834B2529227BDBCF00EFC1E0 /* AddActivityCoordinator.swift */; };
+		83B484562283954E002EA854 /* TripEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B484552283954E002EA854 /* TripEditor.swift */; };
 		83DB9027227E4093003A68DE /* AddTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DB9026227E4093003A68DE /* AddTripView.swift */; };
 		83DB902C227EA84C003A68DE /* DateFormatter+Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DB902B227EA84C003A68DE /* DateFormatter+Factory.swift */; };
 		83DB902E227EAB8B003A68DE /* DatePicker+Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DB902D227EAB8B003A68DE /* DatePicker+Factory.swift */; };
 		83DB9030227EB313003A68DE /* ToolBar+Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DB902F227EB313003A68DE /* ToolBar+Factory.swift */; };
 		83DB903322811CBF003A68DE /* TextFieldTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DB903222811CBF003A68DE /* TextFieldTypes.swift */; };
 		83DB903522811D43003A68DE /* TextFieldValidators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DB903422811D43003A68DE /* TextFieldValidators.swift */; };
-		83FA67A42277B11900250D4D /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FA67A32277B11900250D4D /* DBManager.swift */; };
+		83FA67A42277B11900250D4D /* PersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FA67A32277B11900250D4D /* PersistanceManager.swift */; };
 		83FA67A72277B20B00250D4D /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FA67A62277B20B00250D4D /* Trip.swift */; };
 		83FA67A92277D09F00250D4D /* AddTripCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FA67A82277D09F00250D4D /* AddTripCoordinator.swift */; };
 		83FA67AB2277D11E00250D4D /* AddTripController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FA67AA2277D11E00250D4D /* AddTripController.swift */; };
@@ -81,13 +82,14 @@
 		834B2524227BD94000EFC1E0 /* AddActivityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActivityController.swift; sourceTree = "<group>"; };
 		834B2527227BD95E00EFC1E0 /* AddActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActivityView.swift; sourceTree = "<group>"; };
 		834B2529227BDBCF00EFC1E0 /* AddActivityCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActivityCoordinator.swift; sourceTree = "<group>"; };
+		83B484552283954E002EA854 /* TripEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripEditor.swift; sourceTree = "<group>"; };
 		83DB9026227E4093003A68DE /* AddTripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTripView.swift; sourceTree = "<group>"; };
 		83DB902B227EA84C003A68DE /* DateFormatter+Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Factory.swift"; sourceTree = "<group>"; };
 		83DB902D227EAB8B003A68DE /* DatePicker+Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DatePicker+Factory.swift"; sourceTree = "<group>"; };
 		83DB902F227EB313003A68DE /* ToolBar+Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToolBar+Factory.swift"; sourceTree = "<group>"; };
 		83DB903222811CBF003A68DE /* TextFieldTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTypes.swift; sourceTree = "<group>"; };
 		83DB903422811D43003A68DE /* TextFieldValidators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldValidators.swift; sourceTree = "<group>"; };
-		83FA67A32277B11900250D4D /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
+		83FA67A32277B11900250D4D /* PersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceManager.swift; sourceTree = "<group>"; };
 		83FA67A62277B20B00250D4D /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		83FA67A82277D09F00250D4D /* AddTripCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTripCoordinator.swift; sourceTree = "<group>"; };
 		83FA67AA2277D11E00250D4D /* AddTripController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTripController.swift; sourceTree = "<group>"; };
@@ -144,7 +146,7 @@
 				83DB903122811CA8003A68DE /* Helpers */,
 				83FA67B0227A2A4400250D4D /* DataSource */,
 				83FA67A52277B20400250D4D /* Model */,
-				83FA67A22277B10800250D4D /* DBManager */,
+				83FA67A22277B10800250D4D /* DataManaging */,
 				83FA67A12277B0F000250D4D /* Controller */,
 				831F2D1A22769E6E00CA2226 /* Extensions */,
 				831F2D1722769E0900CA2226 /* Factories */,
@@ -269,12 +271,13 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		83FA67A22277B10800250D4D /* DBManager */ = {
+		83FA67A22277B10800250D4D /* DataManaging */ = {
 			isa = PBXGroup;
 			children = (
-				83FA67A32277B11900250D4D /* DBManager.swift */,
+				83FA67A32277B11900250D4D /* PersistanceManager.swift */,
+				83B484552283954E002EA854 /* TripEditor.swift */,
 			);
-			path = DBManager;
+			path = DataManaging;
 			sourceTree = "<group>";
 		};
 		83FA67A52277B20400250D4D /* Model */ = {
@@ -436,7 +439,7 @@
 				831F2D1322769B2D00CA2226 /* HomeView.swift in Sources */,
 				831F2D1622769DDF00CA2226 /* Header.swift in Sources */,
 				83FA67BB227A60F500250D4D /* TripOverviewView.swift in Sources */,
-				83FA67A42277B11900250D4D /* DBManager.swift in Sources */,
+				83FA67A42277B11900250D4D /* PersistanceManager.swift in Sources */,
 				83FA67BD227A6EDE00250D4D /* Activity.swift in Sources */,
 				83DB902E227EAB8B003A68DE /* DatePicker+Factory.swift in Sources */,
 				831F2D1E2276AADA00CA2226 /* UIButton+Factorty.swift in Sources */,
@@ -445,6 +448,7 @@
 				83DB903522811D43003A68DE /* TextFieldValidators.swift in Sources */,
 				834B2525227BD94000EFC1E0 /* AddActivityController.swift in Sources */,
 				834B2523227BC96200EFC1E0 /* UITextField+Factory.swift in Sources */,
+				83B484562283954E002EA854 /* TripEditor.swift in Sources */,
 				834B252A227BDBCF00EFC1E0 /* AddActivityCoordinator.swift in Sources */,
 				834B251C227BB15100EFC1E0 /* EditActivityCoordinator.swift in Sources */,
 				83DB9030227EB313003A68DE /* ToolBar+Factory.swift in Sources */,

@@ -8,7 +8,12 @@
 
 import Foundation
 
-struct Activity {
+struct Activity: Equatable {
+    var id: String
     var name: String
     var estimatedCost: String
+    
+    static func ==(lhs: Activity, rhs: Activity) -> Bool {
+        return lhs.id == rhs.id
+    }
 }

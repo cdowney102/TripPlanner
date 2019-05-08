@@ -21,7 +21,7 @@ class MainCoordinator: NSObject, Coordinator, UINavigationControllerDelegate {
     func start() {
         #warning("grab data from DBManager and pass it -- may be empty")
         navigationController.delegate = self
-        let vc = HomeController()
+        let vc = HomeController(trips: [])
         vc.mainCoordinator = self
         navigationController.pushViewController(vc, animated: true)
     }

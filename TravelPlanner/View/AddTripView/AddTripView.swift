@@ -72,6 +72,7 @@ extension AddTripView {
     
     private func setupButton() {
         addSubview(addButton)
+        addButton.addTarget(self, action: #selector(addTrip), for: .touchUpInside)
         NSLayoutConstraint.activate([
             addButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             addButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -35),
@@ -81,7 +82,6 @@ extension AddTripView {
     }
     
     private func setupDatePicker() {
-
         let startToolbar = ToolBarFactory().build()
         let endToolbar = ToolBarFactory().build()
         
@@ -91,8 +91,8 @@ extension AddTripView {
         let startCancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker))
         let endCancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker))
         
-        startToolbar.setItems([startDateDoneButton,spaceButton,startCancelButton], animated: false)
-        endToolbar.setItems([endDateDoneButton,spaceButton,endCancelButton], animated: false)
+        startToolbar.setItems([startDateDoneButton, spaceButton, startCancelButton], animated: false)
+        endToolbar.setItems([endDateDoneButton, spaceButton, endCancelButton], animated: false)
         
         tripStartDate.inputAccessoryView = startToolbar
         tripStartDate.inputView = startDatePicker

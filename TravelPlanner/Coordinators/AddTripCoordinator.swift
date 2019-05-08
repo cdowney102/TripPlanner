@@ -27,6 +27,7 @@ class AddTripCoordinator: Coordinator {
     }
     
     func didFinishCreating(trip: Trip) {
+        print(trip.id, trip.tripName, trip.startDate, trip.endDate)
         parentCoordinator?.childDidfinish(self)
     }
     

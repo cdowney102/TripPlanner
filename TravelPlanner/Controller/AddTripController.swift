@@ -25,6 +25,8 @@ class AddTripController: UIViewController {
         
         addView.addTripBtnAction = { [ weak self ] in
             print("add trip")
+            let trip = Trip(id: UUID().uuidString, startDate: "Sept 9, 2019", endDate: "Sept 11, 2019", destination: "San Diego", tripName: "LA Trip", activities: [])
+            self?.coordinator?.didFinishCreating(trip: trip)
         }
     }
 }
