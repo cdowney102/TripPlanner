@@ -14,20 +14,21 @@ class AddTripCoordinator: Coordinator {
     weak var parentCoordinator: MainCoordinator?
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
+    var dataManager: DataManager
     
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController, dataManager: DataManager) {
+        self.dataManager = dataManager
         self.navigationController = navigationController
         self.navigationController.setNavigationBarHidden(true, animated: false)
     }
     
     func start() {
-        let vc = AddTripController()
+        let vc = AddTripController(dataManager: dataManager)
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }
     
-    func didFinishCreating(trip: Trip) {
-        print(trip.id, trip.tripName, trip.startDate, trip.endDate)
+    func didFinishCreating() {
         parentCoordinator?.childDidfinish(self)
     }
     

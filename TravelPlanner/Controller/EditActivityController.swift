@@ -11,8 +11,19 @@ import UIKit
 class EditActivityController: UIViewController {
 
     weak var coordinator: EditActivityCoordinator?
-    var trip: Trip!
     var activityAtIndex: Int!
+    var trip: Trip!
+    
+    var dataManager: DataManager
+    
+    init(dataManager: DataManager) {
+        self.dataManager = dataManager
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func loadView() {
         super.loadView()
@@ -24,6 +35,5 @@ class EditActivityController: UIViewController {
             guard let strongSelf = self else { return }
             strongSelf.coordinator?.didCancel()
         }
-        
     }
 }

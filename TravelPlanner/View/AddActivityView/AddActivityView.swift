@@ -11,7 +11,6 @@ import UIKit
 
 class AddActivityView: UIView {
     
-    #warning("add left chevron to header to dismiss/ go back -- app store req")
     lazy var header = Header(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height * 0.17))
     private var nameLabel = TextFieldFactory(placeholder: "Activity Name").build()
     private var estimatedCostLabel = TextFieldFactory(placeholder: "Estimated Cost").build()

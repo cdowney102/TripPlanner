@@ -27,6 +27,7 @@
 		834B2528227BD95E00EFC1E0 /* AddActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834B2527227BD95E00EFC1E0 /* AddActivityView.swift */; };
 		834B252A227BDBCF00EFC1E0 /* AddActivityCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834B2529227BDBCF00EFC1E0 /* AddActivityCoordinator.swift */; };
 		83B484562283954E002EA854 /* TripEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B484552283954E002EA854 /* TripEditor.swift */; };
+		83B484582283E352002EA854 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B484572283E352002EA854 /* DataManager.swift */; };
 		83DB9027227E4093003A68DE /* AddTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DB9026227E4093003A68DE /* AddTripView.swift */; };
 		83DB902C227EA84C003A68DE /* DateFormatter+Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DB902B227EA84C003A68DE /* DateFormatter+Factory.swift */; };
 		83DB902E227EAB8B003A68DE /* DatePicker+Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DB902D227EAB8B003A68DE /* DatePicker+Factory.swift */; };
@@ -83,6 +84,7 @@
 		834B2527227BD95E00EFC1E0 /* AddActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActivityView.swift; sourceTree = "<group>"; };
 		834B2529227BDBCF00EFC1E0 /* AddActivityCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActivityCoordinator.swift; sourceTree = "<group>"; };
 		83B484552283954E002EA854 /* TripEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripEditor.swift; sourceTree = "<group>"; };
+		83B484572283E352002EA854 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		83DB9026227E4093003A68DE /* AddTripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTripView.swift; sourceTree = "<group>"; };
 		83DB902B227EA84C003A68DE /* DateFormatter+Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Factory.swift"; sourceTree = "<group>"; };
 		83DB902D227EAB8B003A68DE /* DatePicker+Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DatePicker+Factory.swift"; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 			children = (
 				83FA67A32277B11900250D4D /* PersistanceManager.swift */,
 				83B484552283954E002EA854 /* TripEditor.swift */,
+				83B484572283E352002EA854 /* DataManager.swift */,
 			);
 			path = DataManaging;
 			sourceTree = "<group>";
@@ -448,6 +451,7 @@
 				83DB903522811D43003A68DE /* TextFieldValidators.swift in Sources */,
 				834B2525227BD94000EFC1E0 /* AddActivityController.swift in Sources */,
 				834B2523227BC96200EFC1E0 /* UITextField+Factory.swift in Sources */,
+				83B484582283E352002EA854 /* DataManager.swift in Sources */,
 				83B484562283954E002EA854 /* TripEditor.swift in Sources */,
 				834B252A227BDBCF00EFC1E0 /* AddActivityCoordinator.swift in Sources */,
 				834B251C227BB15100EFC1E0 /* EditActivityCoordinator.swift in Sources */,

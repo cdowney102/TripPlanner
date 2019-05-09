@@ -14,17 +14,18 @@ class EditActivityCoordinator: Coordinator {
     weak var parentCoordinator: TripOverviewCoordinator?
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
-    
+    var dataManager: DataManager
     var trip: Trip!
     var activityAtIndex: Int!
     
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController, dataManager: DataManager) {
+        self.dataManager = dataManager
         self.navigationController = navigationController
         self.navigationController.setNavigationBarHidden(true, animated: false)
     }
     
     func start() {
-        let vc = EditActivityController()
+        let vc = EditActivityController(dataManager: dataManager)
         vc.coordinator = self
         vc.trip = trip
         vc.activityAtIndex = activityAtIndex

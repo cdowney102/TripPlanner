@@ -14,16 +14,18 @@ class TripOverviewCoordinator: Coordinator {
     weak var parentCoordinator: MainCoordinator?
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
+    var dataManager: DataManager
     
     var trip: Trip!
     
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController, dataManager: DataManager) {
+        self.dataManager = dataManager
         self.navigationController = navigationController
         self.navigationController.setNavigationBarHidden(true, animated: false)
     }
     
     func start() {
-        let vc = TripOverviewController()
+        let vc = TripOverviewController(dataManager: dataManager)
         vc.coordinator = self
         vc.trip = trip
         navigationController.pushViewController(vc, animated: true)
@@ -48,7 +50,7 @@ class TripOverviewCoordinator: Coordinator {
     }
     
     func editActivity(_ activityAtIndex: Int) {
-        let child = EditActivityCoordinator(navigationController: navigationController)
+        let child = EditActivityCoordinator(navigationController: navigationController, dataManager: dataManager)
         child.parentCoordinator = self
         child.trip = trip
         child.activityAtIndex = activityAtIndex
@@ -57,7 +59,7 @@ class TripOverviewCoordinator: Coordinator {
     }
     
     func addActivity() {
-        let child = AddActivityCoordinator(navigationController: navigationController)
+        let child = AddActivityCoordinator(navigationController: navigationController, dataManager: dataManager)
         child.parentCoordinator = self
         child.trip = trip
         childCoordinators.append(child)

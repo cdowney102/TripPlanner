@@ -19,11 +19,8 @@ class TripCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        setupLabels(title: "Trip Title", date: "Sept 9 - 11", tripCost: "$550")
         backgroundColor = .gray
         layer.cornerRadius = 15
-        
     }
     
     required init?(coder aDecoder: NSCoder) {

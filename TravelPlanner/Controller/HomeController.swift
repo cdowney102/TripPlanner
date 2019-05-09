@@ -11,10 +11,11 @@ import UIKit
 class HomeController: UIViewController {
     
     weak var mainCoordinator: MainCoordinator?
-    var trips: [Trip]
+    var homeView: HomeView?
+    var dataManager: DataManager
     
-    init(trips: [Trip]) {
-        self.trips = trips
+    init(dataManager: DataManager) {
+        self.dataManager = dataManager
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -22,20 +23,27 @@ class HomeController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        homeView?.dataSource.trips = Array(dataManager.trips.values)
+        homeView?.collectionView.reloadData()
+    }
+    
     override func loadView() {
         super.loadView()
         
-        let homeView = HomeView(frame: view.bounds)
-        view.addSubview(homeView)
+        homeView = HomeView(frame: view.bounds)
         
-        homeView.didSelect = { [ weak self ] trip in
+        guard let home = homeView else { return }
+        view.addSubview(home)
+        
+        home.didSelect = { [ weak self ] trip in
             self?.update(trip)
         }
         
-        homeView.header.btnAction = { [ weak self ] in
+        home.header.btnAction = { [ weak self ] in
             self?.create()
         }
-        
     }
     
     func update(_ trip: Trip) {
@@ -45,6 +53,5 @@ class HomeController: UIViewController {
     func create() {
         mainCoordinator?.create()
     }
-
 }
 

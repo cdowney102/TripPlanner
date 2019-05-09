@@ -12,16 +12,15 @@ protocol TripEditor {
     var trips: [String:Trip] { get set }
     var selectedTrip: Trip? { get set }
     
-    mutating func didAdd(trip: Trip)
+    mutating func didCreate(trip: Trip)
     mutating func didDelete(trip: Trip)
-    mutating func didAddActivity(to trip: Trip, activity: Activity)
+    mutating func didCreateActivity(for trip: Trip, activity: Activity)
     mutating func didDeleteActivity(from trip: Trip, activity: Activity)
     mutating func didEditActivity(for trip: Trip, activity: Activity)
-    #warning("can add == override for Activity comparing act id")
 }
 
 extension TripEditor {
-    mutating func didAdd(trip: Trip) {
+    mutating func didCreate(trip: Trip) {
         trips[trip.id] = trip
     }
     
@@ -29,7 +28,7 @@ extension TripEditor {
         trips.removeValue(forKey: trip.id)
     }
     
-    mutating func didAddActivity(to trip: Trip, activity: Activity) {
+    mutating func didCreateActivity(for trip: Trip, activity: Activity) {
         if var trip = trips[trip.id] {
             trip.activities.append(activity)
         }
@@ -40,8 +39,9 @@ extension TripEditor {
             activityList = activityList.filter { $0 != activity }
         }
     }
-    
+
     mutating func didEditActivity(for trip: Trip, activity: Activity) {
+        #warning("this is ugly")
         if let activityList = trips[trip.id]?.activities {
             var foundIndex: Int? = nil
             for (index, item) in activityList.enumerated() {
@@ -50,7 +50,7 @@ extension TripEditor {
                 }
             }
             if let index = foundIndex {
-                trips[trip.id]?.activities.remove(at: index)
+                trips[trip.id]?.activities[index] = activity
             }
         }
     }

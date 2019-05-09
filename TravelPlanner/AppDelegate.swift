@@ -14,12 +14,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var coordinator: MainCoordinator?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         let navController = UINavigationController()
-        coordinator = MainCoordinator(navigationController: navController)
+        let dataManager = DataManager(trips: [:])
+        coordinator = MainCoordinator(navigationController: navController, dataManager: dataManager)
         coordinator?.start()
         
         window = UIWindow(frame: UIScreen.main.bounds)
@@ -52,11 +52,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Saves changes in the application's managed object context before the application terminates.
 
     }
-    
-    // MARK: - Core Data stack
-    
-    
-
-
 }
 

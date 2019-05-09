@@ -12,33 +12,38 @@ import UIKit
 class MainCoordinator: NSObject, Coordinator, UINavigationControllerDelegate {
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
+    var dataManager: DataManager
     
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController, dataManager: DataManager) {
+        self.dataManager = dataManager
         self.navigationController = navigationController
         self.navigationController.setNavigationBarHidden(true, animated: false)
     }
     
     func start() {
-        #warning("grab data from DBManager and pass it -- may be empty")
         navigationController.delegate = self
-        let vc = HomeController(trips: [])
+        let vc = HomeController(dataManager: dataManager)
         vc.mainCoordinator = self
         navigationController.pushViewController(vc, animated: true)
     }
     
     func create() {
-        let child = AddTripCoordinator(navigationController: navigationController)
+        let child = AddTripCoordinator(navigationController: navigationController, dataManager: dataManager)
         child.parentCoordinator = self
         childCoordinators.append(child)
         child.start()
     }
     
     func overview(_ trip: Trip) {
-        let child = TripOverviewCoordinator(navigationController: navigationController)
+        let child = TripOverviewCoordinator(navigationController: navigationController, dataManager: dataManager)
         child.parentCoordinator = self
         child.trip = trip
         childCoordinators.append(child)
         child.start()
+    }
+    
+    func refresh() {
+        
     }
     
     func childDidfinish(_ child: Coordinator) {

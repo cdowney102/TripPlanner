@@ -19,6 +19,8 @@ class TripsDataSource: NSObject, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TripCell.identifier, for: indexPath) as! TripCell
+        let trip = trips[indexPath.item]
+        cell.setupLabels(title: trip.tripName, date: trip.startDate, tripCost: trip.estimatedCost)
         return cell
     }
     
