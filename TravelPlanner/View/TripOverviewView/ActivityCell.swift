@@ -18,7 +18,6 @@ class ActivityCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .default, reuseIdentifier: ActivityCell.identifier)
-        
         setupLabels()
     }
     
@@ -39,5 +38,10 @@ class ActivityCell: UITableViewCell {
             nameLabel.heightAnchor.constraint(equalToConstant: 25),
             nameLabel.centerYAnchor.constraint(equalTo: centerYAnchor)
             ])
+    }
+    
+    func setupUI(activityName: String, cost: String) {
+        nameLabel.text = activityName
+        costLabel.text = cost
     }
 }

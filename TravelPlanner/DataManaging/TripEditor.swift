@@ -25,19 +25,17 @@ extension TripEditor {
     }
     
     mutating func didDelete(trip: Trip) {
+        #warning("maybe rethink passing around just the id or actualy trip ref here in all these calls")
         trips.removeValue(forKey: trip.id)
     }
     
     mutating func didCreateActivity(for trip: Trip, activity: Activity) {
-        if var trip = trips[trip.id] {
-            trip.activities.append(activity)
-        }
+        trips[trip.id]?.activities.append(activity)
     }
     
     mutating func didDeleteActivity(from trip: Trip, activity: Activity) {
-        if var activityList = trips[trip.id]?.activities {
-            activityList = activityList.filter { $0 != activity }
-        }
+        let filteredList = trips[trip.id]?.activities.filter { $0 != activity } ?? []
+        trips[trip.id]?.activities = filteredList
     }
 
     mutating func didEditActivity(for trip: Trip, activity: Activity) {

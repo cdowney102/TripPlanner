@@ -60,7 +60,7 @@ extension HomeView: UICollectionViewDelegateFlowLayout {
 
 extension HomeView {
     private func setupHeader() {
-        header.setupUI("My Trips", "Where to next?", "")
+        header.setupUI(destination: "My Trips", tripName: "Where to next?", estCost: "", btnType: .add)
         addSubview(header)
         header.backButton.isHidden = true
     }

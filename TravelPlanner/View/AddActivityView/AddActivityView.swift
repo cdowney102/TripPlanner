@@ -15,6 +15,7 @@ class AddActivityView: UIView {
     private var nameLabel = TextFieldFactory(placeholder: "Activity Name").build()
     private var estimatedCostLabel = TextFieldFactory(placeholder: "Estimated Cost").build()
     private var addButton = ButtonFactory(image: UIImage(named: "add.png")!).build()
+    var addBtnAction: (() -> Void)?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -32,8 +33,7 @@ class AddActivityView: UIView {
 extension AddActivityView {
     private func setupHeader() {
         addSubview(header)
-        header.setupUI("Activity Name", "Sounds fun...", "$0")
-        header.buttonType = .remove
+        header.setupUI(destination: "What's the plan?", tripName: "decisions, decisions", estCost: "$0", btnType: .remove)
     }
     
     private func setupLabels() {
@@ -55,11 +55,16 @@ extension AddActivityView {
     
     private func setupButton() {
         addSubview(addButton)
+        addButton.addTarget(self, action: #selector(addTapped), for: .touchUpInside)
         NSLayoutConstraint.activate([
             addButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             addButton.widthAnchor.constraint(equalToConstant: 65),
             addButton.heightAnchor.constraint(equalToConstant: 35),
             addButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -25)
             ])
+    }
+    
+    @objc private func addTapped() {
+        addBtnAction?()
     }
 }

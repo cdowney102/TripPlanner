@@ -40,8 +40,7 @@ class EditActivityView: UIView {
 extension EditActivityView {
     private func setupHeader() {
         addSubview(header)
-        header.setupUI("Activity Name", "Sounds fun...", "$0")
-        header.buttonType = .remove
+        header.setupUI(destination: "Activity Name", tripName: "Sounds fun...", estCost: "$0", btnType: .remove)
     }
     
     private func setupLabels() {

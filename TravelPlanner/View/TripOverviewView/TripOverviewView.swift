@@ -41,7 +41,6 @@ class TripOverviewView: UIView {
 
 extension TripOverviewView {
     private func setupHeader() {
-        header.setupUI("Los Angeles", "Sept 9 - 11", "$122")
         addSubview(header)
     }
     
@@ -74,7 +73,6 @@ extension TripOverviewView {
 
 extension TripOverviewView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let activity = dataSource.fetchActivityAtRow(indexPath.row)
         didSelectTripAt?(indexPath.row)
     }
     

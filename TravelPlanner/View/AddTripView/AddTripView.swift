@@ -39,8 +39,7 @@ class AddTripView: UIView {
 extension AddTripView {
     private func setupHeader() {
         addSubview(header)
-        header.setupUI("New Trip", "Don't forget the phone charger!", "$0")
-        header.buttonType = .remove
+        header.setupUI(destination: "New Trip", tripName: "Don't forget the phone charger!", estCost: "$0", btnType: .remove)
     }
     
     private func setupLabels() {

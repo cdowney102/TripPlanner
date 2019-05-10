@@ -6,12 +6,15 @@
 //  Copyright © 2019 christopher downey. All rights reserved.
 //
 
+// MARK - TripOverView lists activities for the selected trip
+
 import UIKit
 
 class TripOverviewController: UIViewController {
     
     weak var coordinator: TripOverviewCoordinator?
     var dataManager: DataManager
+    var tripOverviewView: TripOverviewView!
     var trip: Trip!
 
     init(dataManager: DataManager) {
@@ -23,11 +26,18 @@ class TripOverviewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        trip = dataManager.fetch(trip: trip)
+        tripOverviewView.dataSource.activities = trip.activities
+        tripOverviewView.tableView.reloadData()
+    }
+    
     override func loadView() {
         super.loadView()
-
-        let tripOverviewView = TripOverviewView(frame: view.frame)
-        tripOverviewView.header.buttonType = .remove
+        
+        tripOverviewView = TripOverviewView(frame: view.frame)
+        tripOverviewView.header.setupUI(destination: trip.destination, tripName: trip.tripName, estCost: trip.estimatedCost, btnType: .add)
         view.addSubview(tripOverviewView)
         
         tripOverviewView.didSelectTripAt = { [ weak self ] index in
@@ -41,7 +51,6 @@ class TripOverviewController: UIViewController {
         }
 
         tripOverviewView.header.backBtnAction = { [ weak self ] in
-            print("back")
             guard let strongSelf = self else { return }
             strongSelf.coordinator?.didCancel()
         }

@@ -19,6 +19,8 @@ class ActivityDataSource: NSObject, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ActivityCell.identifier) as! ActivityCell
+        let activity = activities[indexPath.row]
+        cell.setupUI(activityName: activity.name, cost: activity.estimatedCost)
         return cell
     }
     

@@ -15,4 +15,8 @@ class DataManager: TripEditor {
     init(trips: [String:Trip]) {
         self.trips = trips
     }
+    
+    func fetch(trip: Trip) -> Trip? {
+        return trips[trip.id]
+    }
 }

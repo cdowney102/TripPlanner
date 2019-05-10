@@ -41,15 +41,16 @@ final class Header: UIView {
 }
 
 extension Header {
-    func setupUI(_ title: String, _ subTitle: String, _ cost: String) {
-        titleLabel = LabelFactory(text: title, fontColor: .black, font: UIFont.systemFont(ofSize: 16)).build()
-        subtitleLabel = LabelFactory(text: subTitle, fontColor: .black, font: UIFont.systemFont(ofSize: 14)).build()
-        estimatedCostLabel = LabelFactory(text: cost, fontColor: .black, font: UIFont.systemFont(ofSize: 14)).build()
+    func setupUI(destination: String, tripName: String, estCost: String, btnType: ButtonType) {
+        titleLabel = LabelFactory(text: destination, fontColor: .black, font: UIFont.systemFont(ofSize: 16)).build()
+        subtitleLabel = LabelFactory(text: tripName, fontColor: .black, font: UIFont.systemFont(ofSize: 14)).build()
+        estimatedCostLabel = LabelFactory(text: estCost, fontColor: .black, font: UIFont.systemFont(ofSize: 14)).build()
         button = ButtonFactory(image: UIImage(named: "add.png")!).build()
         backButton = ButtonFactory(image: UIImage(named: "left-arrow.png")!).build()
         
         backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
         button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+        buttonType = btnType
         
         addSubviews(titleLabel, subtitleLabel, estimatedCostLabel, button, backButton)
         

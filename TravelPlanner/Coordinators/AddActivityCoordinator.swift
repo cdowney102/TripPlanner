@@ -34,4 +34,8 @@ class AddActivityCoordinator: Coordinator {
     func activityWasAdded() {
         parentCoordinator?.childDidfinish(self)
     }
+    
+    func didCancel() {
+        parentCoordinator?.childDidfinish(self)
+    }
 }
