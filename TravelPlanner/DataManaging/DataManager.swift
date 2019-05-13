@@ -19,4 +19,8 @@ class DataManager: TripEditor {
     func fetch(trip: Trip) -> Trip? {
         return trips[trip.id]
     }
+    
+    func fetchActivityFrom(index: Int, and trip: Trip) -> Activity? {
+        return trips[trip.id]?.activities[index]
+    }
 }

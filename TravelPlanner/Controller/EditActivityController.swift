@@ -35,5 +35,14 @@ class EditActivityController: UIViewController {
             guard let strongSelf = self else { return }
             strongSelf.coordinator?.didCancel()
         }
+        
+        editView.header.btnAction = { [ weak self ] in
+            guard let strongSelf = self else { return }
+            let activity = strongSelf.dataManager.fetchActivityFrom(index: strongSelf.activityAtIndex, and: strongSelf.trip)
+            if let activity = activity {
+                strongSelf.dataManager.didDeleteActivity(from: strongSelf.trip, activity: activity)
+            }
+            strongSelf.coordinator?.didCancel()
+        }
     }
 }
