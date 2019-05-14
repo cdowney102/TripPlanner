@@ -37,7 +37,7 @@ class TripOverviewController: UIViewController {
         super.loadView()
         
         tripOverviewView = TripOverviewView(frame: view.frame)
-        tripOverviewView.header.setupUI(destination: trip.destination, tripName: trip.tripName, estCost: trip.estimatedCost, btnType: .add)
+        tripOverviewView.header.setupUI(destination: trip.destination, tripName: trip.tripName, estCost: trip.estimatedCost, btnType: .remove)
         view.addSubview(tripOverviewView)
         
         tripOverviewView.didSelectTripAt = { [ weak self ] index in
@@ -52,6 +52,12 @@ class TripOverviewController: UIViewController {
 
         tripOverviewView.header.backBtnAction = { [ weak self ] in
             guard let strongSelf = self else { return }
+            strongSelf.coordinator?.didCancel()
+        }
+        
+        tripOverviewView.header.btnAction = { [ weak self ] in
+            guard let strongSelf = self else { return }
+            strongSelf.dataManager.didDelete(trip: strongSelf.trip)
             strongSelf.coordinator?.didCancel()
         }
     }

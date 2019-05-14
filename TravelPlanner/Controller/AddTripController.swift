@@ -38,5 +38,10 @@ class AddTripController: UIViewController {
             self?.dataManager.didCreate(trip: trip)
             self?.coordinator?.didFinishCreating()
         }
+        
+        addView.header.btnAction = { [ weak self ] in
+            guard let strongSelf = self else { return }
+            strongSelf.coordinator?.didCancel()
+        }
     }
 }
