@@ -38,6 +38,8 @@ extension AddActivityView {
     
     private func setupLabels() {
         addSubviews(nameLabel, estimatedCostLabel)
+        nameLabel.addDoneButton()
+        estimatedCostLabel.addDoneButton()
         NSLayoutConstraint.activate([
             nameLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             nameLabel.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -25),

@@ -20,6 +20,7 @@ final class LabelFactory {
         self.label.textColor = fontColor
         self.label.font = font
         self.label.text = text
+        self.label.sizeToFit()
     }
     
     func build() -> UILabel {

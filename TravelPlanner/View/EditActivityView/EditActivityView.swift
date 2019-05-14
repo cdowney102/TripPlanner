@@ -14,18 +14,19 @@ class EditActivityView: UIView {
     lazy var header = Header(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height * 0.17))
     let nameTextField = TextFieldFactory(placeholder: "Activity Name").build()
     let costTextField = TextFieldFactory(placeholder: "Estimated cost - $0").build()
-    
-    var updateButton: UIButton = {
+    var updateBtnAction: (() -> Void)?
+    #warning("change to factory butotn after getting asset")
+    lazy var updateButton: UIButton = {
         let button = UIButton(frame: .zero)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Update", for: .normal)
         button.setTitleColor(.blue, for: .normal)
+        button.addTarget(self, action: #selector(updateTapped), for: .touchUpInside)
         return button
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         backgroundColor = .white
         setupHeader()
         setupLabels()
@@ -40,13 +41,14 @@ class EditActivityView: UIView {
 extension EditActivityView {
     private func setupHeader() {
         addSubview(header)
-        header.setupUI(destination: "Activity Name", tripName: "Sounds fun...", estCost: "$0", btnType: .remove)
     }
     
     private func setupLabels() {
         addSubviews(nameTextField, costTextField)
         nameTextField.delegate = self
         costTextField.delegate = self
+        nameTextField.addDoneButton()
+        costTextField.addDoneButton()
         NSLayoutConstraint.activate([
             nameTextField.centerXAnchor.constraint(equalTo: centerXAnchor),
             nameTextField.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -15),
@@ -70,6 +72,10 @@ extension EditActivityView {
             updateButton.widthAnchor.constraint(equalToConstant: 80),
             updateButton.heightAnchor.constraint(equalToConstant: 35)
             ])
+    }
+    
+    @objc private func updateTapped() {
+        updateBtnAction?()
     }
 }
 

@@ -26,6 +26,7 @@
 		834B2525227BD94000EFC1E0 /* AddActivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834B2524227BD94000EFC1E0 /* AddActivityController.swift */; };
 		834B2528227BD95E00EFC1E0 /* AddActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834B2527227BD95E00EFC1E0 /* AddActivityView.swift */; };
 		834B252A227BDBCF00EFC1E0 /* AddActivityCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834B2529227BDBCF00EFC1E0 /* AddActivityCoordinator.swift */; };
+		839047B4228A63CA00C6EB99 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839047B3228A63CA00C6EB99 /* UITextField+Extensions.swift */; };
 		83B484562283954E002EA854 /* TripEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B484552283954E002EA854 /* TripEditor.swift */; };
 		83B484582283E352002EA854 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B484572283E352002EA854 /* DataManager.swift */; };
 		83DB9027227E4093003A68DE /* AddTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DB9026227E4093003A68DE /* AddTripView.swift */; };
@@ -83,6 +84,7 @@
 		834B2524227BD94000EFC1E0 /* AddActivityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActivityController.swift; sourceTree = "<group>"; };
 		834B2527227BD95E00EFC1E0 /* AddActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActivityView.swift; sourceTree = "<group>"; };
 		834B2529227BDBCF00EFC1E0 /* AddActivityCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActivityCoordinator.swift; sourceTree = "<group>"; };
+		839047B3228A63CA00C6EB99 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		83B484552283954E002EA854 /* TripEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripEditor.swift; sourceTree = "<group>"; };
 		83B484572283E352002EA854 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		83DB9026227E4093003A68DE /* AddTripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTripView.swift; sourceTree = "<group>"; };
@@ -189,7 +191,7 @@
 			children = (
 				83DB9025227E4083003A68DE /* AddTripView */,
 				834B2526227BD95000EFC1E0 /* AddActivityView */,
-				834B251F227BC84600EFC1E0 /* EditTripView */,
+				834B251F227BC84600EFC1E0 /* EditActivityView */,
 				83FA67B9227A60EA00250D4D /* TripOverviewView */,
 				831F2D1422769DD700CA2226 /* Header */,
 				83FA67AC22792A8200250D4D /* Home */,
@@ -224,16 +226,17 @@
 			isa = PBXGroup;
 			children = (
 				831F2D1B22769E7D00CA2226 /* UIView+Extensions.swift */,
+				839047B3228A63CA00C6EB99 /* UITextField+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		834B251F227BC84600EFC1E0 /* EditTripView */ = {
+		834B251F227BC84600EFC1E0 /* EditActivityView */ = {
 			isa = PBXGroup;
 			children = (
 				834B2520227BC85400EFC1E0 /* EditActivityView.swift */,
 			);
-			path = EditTripView;
+			path = EditActivityView;
 			sourceTree = "<group>";
 		};
 		834B2526227BD95000EFC1E0 /* AddActivityView */ = {
@@ -435,6 +438,7 @@
 				83DB902C227EA84C003A68DE /* DateFormatter+Factory.swift in Sources */,
 				83FA67BF227A720A00250D4D /* ActivityDataSource.swift in Sources */,
 				83FA67AB2277D11E00250D4D /* AddTripController.swift in Sources */,
+				839047B4228A63CA00C6EB99 /* UITextField+Extensions.swift in Sources */,
 				831F2CEF2276977400CA2226 /* HomeController.swift in Sources */,
 				831F2D102276989F00CA2226 /* MainCoordinator.swift in Sources */,
 				831F2CED2276977400CA2226 /* AppDelegate.swift in Sources */,

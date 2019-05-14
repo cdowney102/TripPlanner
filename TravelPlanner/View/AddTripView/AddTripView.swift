@@ -44,6 +44,8 @@ extension AddTripView {
     
     private func setupLabels() {
         addSubviews(destinationTextField, tripNameTextField, tripStartDate, tripEndDate)
+        destinationTextField.addDoneButton()
+        tripNameTextField.addDoneButton()
         NSLayoutConstraint.activate([
             tripNameTextField.centerXAnchor.constraint(equalTo: centerXAnchor),
             tripNameTextField.centerYAnchor.constraint(equalTo: centerYAnchor),

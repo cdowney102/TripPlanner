@@ -28,7 +28,7 @@ class EditActivityCoordinator: Coordinator {
         let vc = EditActivityController(dataManager: dataManager)
         vc.coordinator = self
         vc.trip = trip
-        vc.activityAtIndex = activityAtIndex
+        vc.activity = dataManager.fetchActivityFrom(index: activityAtIndex, and: trip)
         navigationController.pushViewController(vc, animated: true)
     }
     

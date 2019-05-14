@@ -42,7 +42,7 @@ class TripOverviewController: UIViewController {
         
         tripOverviewView.didSelectTripAt = { [ weak self ] index in
             guard let strongSelf = self else { return }
-            strongSelf.coordinator?.editActivity(index)
+            strongSelf.coordinator?.editActivity(at: index)
         }
         
         tripOverviewView.addBtnAction = { [ weak self ] in

@@ -11,9 +11,8 @@ import UIKit
 class EditActivityController: UIViewController {
 
     weak var coordinator: EditActivityCoordinator?
-    var activityAtIndex: Int!
+    var activity: Activity!
     var trip: Trip!
-    
     var dataManager: DataManager
     
     init(dataManager: DataManager) {
@@ -31,6 +30,10 @@ class EditActivityController: UIViewController {
         let editView = EditActivityView(frame: view.frame)
         view.addSubview(editView)
         
+        editView.header.setupUI(destination: trip.destination, tripName: activity.name, estCost: activity.estimatedCost, btnType: .remove)
+        editView.nameTextField.text = activity.name
+        editView.costTextField.text = activity.estimatedCost
+        
         editView.header.backBtnAction = { [ weak self ] in
             guard let strongSelf = self else { return }
             strongSelf.coordinator?.didCancel()
@@ -38,10 +41,20 @@ class EditActivityController: UIViewController {
         
         editView.header.btnAction = { [ weak self ] in
             guard let strongSelf = self else { return }
-            let activity = strongSelf.dataManager.fetchActivityFrom(index: strongSelf.activityAtIndex, and: strongSelf.trip)
-            if let activity = activity {
-                strongSelf.dataManager.didDeleteActivity(from: strongSelf.trip, activity: activity)
+            strongSelf.dataManager.didDeleteActivity(from: strongSelf.trip, activity: strongSelf.activity)
+            strongSelf.coordinator?.didCancel()
+        }
+        
+        editView.updateBtnAction = { [ weak self ] in
+            guard let strongSelf = self else { return }
+            if editView.nameTextField.text != "" {
+                strongSelf.activity.name = editView.nameTextField.text ?? "Activity Name"
             }
+            
+            if editView.costTextField.text != "" {
+                strongSelf.activity.estimatedCost = editView.costTextField.text ?? "0"
+            }
+            strongSelf.dataManager.didEditActivity(for: strongSelf.trip, activity: strongSelf.activity)
             strongSelf.coordinator?.didCancel()
         }
     }

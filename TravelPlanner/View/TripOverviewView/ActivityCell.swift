@@ -31,7 +31,7 @@ class ActivityCell: UITableViewCell {
             costLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
             costLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
             costLabel.heightAnchor.constraint(equalToConstant: 25),
-            costLabel.widthAnchor.constraint(equalToConstant: 35),
+            costLabel.widthAnchor.constraint(equalToConstant: 65),
             
             nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
             nameLabel.trailingAnchor.constraint(equalTo: costLabel.leadingAnchor),

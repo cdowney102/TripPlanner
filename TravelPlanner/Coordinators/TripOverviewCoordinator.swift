@@ -30,7 +30,7 @@ class TripOverviewCoordinator: Coordinator {
         vc.trip = trip
         navigationController.pushViewController(vc, animated: true)
     }
-    
+
     func didFinishCreating(trip: Trip) {
         parentCoordinator?.childDidfinish(self)
     }
@@ -49,11 +49,11 @@ class TripOverviewCoordinator: Coordinator {
         navigationController.popViewController(animated: true)
     }
     
-    func editActivity(_ activityAtIndex: Int) {
+    func editActivity(at index: Int) {
         let child = EditActivityCoordinator(navigationController: navigationController, dataManager: dataManager)
         child.parentCoordinator = self
         child.trip = trip
-        child.activityAtIndex = activityAtIndex
+        child.activityAtIndex = index
         childCoordinators.append(child)
         child.start()
     }
