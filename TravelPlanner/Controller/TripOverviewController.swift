@@ -30,6 +30,7 @@ class TripOverviewController: UIViewController {
         super.viewWillAppear(true)
         trip = dataManager.fetch(trip: trip)
         tripOverviewView.dataSource.activities = trip.activities
+        tripOverviewView.header.estimatedCostLabel.text = trip.estimatedCost
         tripOverviewView.tableView.reloadData()
     }
     

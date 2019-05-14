@@ -26,6 +26,7 @@ class HomeController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         homeView?.dataSource.trips = Array(dataManager.trips.values)
+        homeView?.setTotalCost()
         homeView?.collectionView.reloadData()
     }
     

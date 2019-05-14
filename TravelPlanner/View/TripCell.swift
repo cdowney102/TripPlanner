@@ -21,16 +21,23 @@ class TripCell: UICollectionViewCell {
         super.init(frame: frame)
         backgroundColor = .gray
         layer.cornerRadius = 15
+        setupLabels()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupLabels(title: String, date: String, tripCost: String) {
-        tripTitle = LabelFactory(text: title, fontColor: .black, font: .systemFont(ofSize: 18)).build()
-        tripDate = LabelFactory(text: date, fontColor: .black, font: .systemFont(ofSize: 16)).build()
-        tripEstimatedCost = LabelFactory(text: tripCost, fontColor: .black, font: .systemFont(ofSize: 16)).build()
+    func setLabelText(tripName: String, date: String, tripCost: String) {
+        tripTitle.text = tripName
+        tripDate.text = date
+        tripEstimatedCost.text = tripCost
+    }
+    
+    private func setupLabels() {
+        tripTitle = LabelFactory(text: "Trip Name", fontColor: .black, font: .systemFont(ofSize: 18)).build()
+        tripDate = LabelFactory(text: "Trip Date", fontColor: .black, font: .systemFont(ofSize: 16)).build()
+        tripEstimatedCost = LabelFactory(text: "Trip Cost", fontColor: .black, font: .systemFont(ofSize: 16)).build()
         
         addSubviews(tripTitle, tripDate, tripEstimatedCost)
         

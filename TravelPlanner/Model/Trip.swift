@@ -17,7 +17,7 @@ struct Trip {
     var tripName: String
     var activities: [Activity]
     var estimatedCost: String {
-        let cost = activities.map { Int($0.estimatedCost) ?? 0 }.reduce(0, +)
+        let cost = activities.map { Int($0.estimatedCost.replacingOccurrences(of: "$", with: "")) ?? 0 }.reduce(0, +)
         return "$\(String(describing: cost))"
     }
 }
