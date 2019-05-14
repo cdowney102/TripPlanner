@@ -88,7 +88,7 @@ extension HomeView {
     
     func setTotalCost() {
         // sum the total cost to spend on all trips combined
-        var estimatedCost = dataSource.trips.map { Int($0.estimatedCost.replacingOccurrences(of: "$", with: "")) ?? 0 }.reduce(0, +)
+        let estimatedCost = dataSource.trips.map { Int($0.estimatedCost.replacingOccurrences(of: "$", with: "")) ?? 0 }.reduce(0, +)
         header.estimatedCostLabel.text = "$\(String(describing: estimatedCost))"
     }
 }

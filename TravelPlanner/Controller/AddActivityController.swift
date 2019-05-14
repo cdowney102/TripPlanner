@@ -41,5 +41,10 @@ class AddActivityController: UIViewController {
             guard let strongSelf = self else { return }
             strongSelf.coordinator?.didCancel()
         }
+        
+        addActivityView.header.btnAction = { [ weak self ] in
+            guard let strongSelf = self else { return }
+            strongSelf.coordinator?.didCancel()
+        }
     }
 }
