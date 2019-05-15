@@ -39,9 +39,10 @@ class ActivityCell: UITableViewCell {
             nameLabel.centerYAnchor.constraint(equalTo: centerYAnchor)
             ])
     }
-    
+    #warning("do sth wih spaces when trip doesnt have nick name - just put default")
     func setupUI(activityName: String, cost: String) {
         nameLabel.text = activityName
-        costLabel.text = cost
+        costLabel.text = "$\(cost)"
     }
 }
+

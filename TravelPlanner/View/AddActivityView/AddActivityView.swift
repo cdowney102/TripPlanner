@@ -11,9 +11,13 @@ import UIKit
 
 class AddActivityView: UIView {
     
+    var name = ""
+    var cost = "0"
+    
+    // MARK - UI objects
     lazy var header = Header(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height * 0.17))
-    private var nameLabel = TextFieldFactory(placeholder: "Activity Name").build()
-    private var estimatedCostLabel = TextFieldFactory(placeholder: "Estimated Cost").build()
+    private var nameTextField = TextFieldFactory(placeholder: "Activity Name").build()
+    private var estimatedCostTextField = TextFieldFactory(placeholder: "Estimated Cost").build()
     private var addButton = ButtonFactory(image: UIImage(named: "add.png")!).build()
     var addBtnAction: (() -> Void)?
 
@@ -37,21 +41,21 @@ extension AddActivityView {
     }
     
     private func setupLabels() {
-        addSubviews(nameLabel, estimatedCostLabel)
-        nameLabel.addDoneButton()
-        estimatedCostLabel.addDoneButton()
+        addSubviews(nameTextField, estimatedCostTextField)
+        nameTextField.addDoneButton()
+        estimatedCostTextField.addDoneButton()
         NSLayoutConstraint.activate([
-            nameLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            nameLabel.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -25),
-            nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 35),
-            nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -35),
-            nameLabel.heightAnchor.constraint(equalToConstant: 25),
+            nameTextField.centerXAnchor.constraint(equalTo: centerXAnchor),
+            nameTextField.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -25),
+            nameTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 35),
+            nameTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -35),
+            nameTextField.heightAnchor.constraint(equalToConstant: 25),
             
-            estimatedCostLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            estimatedCostLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 25),
-            estimatedCostLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
-            estimatedCostLabel.trailingAnchor.constraint(equalTo: nameLabel.trailingAnchor),
-            estimatedCostLabel.heightAnchor.constraint(equalToConstant: 25)
+            estimatedCostTextField.centerXAnchor.constraint(equalTo: centerXAnchor),
+            estimatedCostTextField.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: 25),
+            estimatedCostTextField.leadingAnchor.constraint(equalTo: nameTextField.leadingAnchor),
+            estimatedCostTextField.trailingAnchor.constraint(equalTo: nameTextField.trailingAnchor),
+            estimatedCostTextField.heightAnchor.constraint(equalToConstant: 25)
             ])
     }
     
@@ -67,6 +71,9 @@ extension AddActivityView {
     }
     
     @objc private func addTapped() {
+        name = nameTextField.text ?? ""
+        cost = estimatedCostTextField.text ?? "0"
+        if cost == "" { cost = "0" }
         addBtnAction?()
     }
 }

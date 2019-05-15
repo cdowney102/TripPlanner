@@ -29,10 +29,18 @@ class AddActivityController: UIViewController {
 
         addActivityView = AddActivityView(frame: view.frame)
         view.addSubview(addActivityView)
-        
+        let validator = TextValidator()
         addActivityView.addBtnAction = { [ weak self ] in
             guard let strongSelf = self else { return }
-            let activity = Activity(id: UUID().uuidString, name: "K-Town", estimatedCost: "$55")
+            print(strongSelf.addActivityView.cost)
+            let activity = Activity(id: UUID().uuidString, name:strongSelf.addActivityView.name, estimatedCost: strongSelf.addActivityView.cost)
+            do {
+                try validator.validate(input: activity.name, fieldType: .destination)
+                try validator.validate(input: activity.estimatedCost, fieldType: .cost)
+            } catch {
+                print(error.localizedDescription)
+                return
+            }
             strongSelf.dataManager.didCreateActivity(for: strongSelf.trip, activity: activity)
             strongSelf.coordinator?.activityWasAdded()
         }
