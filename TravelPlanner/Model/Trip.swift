@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct Trip {
+struct Trip: Codable {
     var id: String
     var startDate: String
     var endDate: String

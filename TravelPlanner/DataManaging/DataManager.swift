@@ -8,12 +8,18 @@
 
 import Foundation
 
-class DataManager: TripEditor {
-    var trips: [String : Trip]
-    var selectedTrip: Trip?
+final class DataManager: TripEditor {
     
-    init(trips: [String:Trip]) {
-        self.trips = trips
+    var trips: [String : Trip]
+    var hasChanges: Bool
+    
+    var fileURL: URL {
+        return URL(fileURLWithPath: NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!).appendingPathComponent("Trips.json")
+    }
+    
+    init() {
+        self.trips = [:]
+        self.hasChanges = false
     }
     
     func fetch(trip: Trip) -> Trip? {
@@ -22,5 +28,29 @@ class DataManager: TripEditor {
     
     func fetchActivityFrom(index: Int, and trip: Trip) -> Activity? {
         return trips[trip.id]?.activities[index]
+    }
+    
+    func save() {
+        if hasChanges {
+            print("writing")
+            do {
+                let data = try JSONEncoder().encode(trips)
+                try data.write(to: fileURL)
+            } catch {
+                print("Problem saving trips: \(error)")
+            }
+        }
+        hasChanges = false
+    }
+    
+    func load() {
+        print("loading")
+        do {
+            let data = try Data(contentsOf: fileURL)
+            let loadedTrips = try JSONDecoder().decode([String: Trip].self, from: data)
+            trips = loadedTrips
+        } catch {
+            print("Problem loading trips: \(error)")
+        }
     }
 }

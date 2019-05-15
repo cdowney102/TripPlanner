@@ -35,7 +35,6 @@
 		83DB9030227EB313003A68DE /* ToolBar+Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DB902F227EB313003A68DE /* ToolBar+Factory.swift */; };
 		83DB903322811CBF003A68DE /* TextFieldTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DB903222811CBF003A68DE /* TextFieldTypes.swift */; };
 		83DB903522811D43003A68DE /* TextFieldValidators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DB903422811D43003A68DE /* TextFieldValidators.swift */; };
-		83FA67A42277B11900250D4D /* PersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FA67A32277B11900250D4D /* PersistanceManager.swift */; };
 		83FA67A72277B20B00250D4D /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FA67A62277B20B00250D4D /* Trip.swift */; };
 		83FA67A92277D09F00250D4D /* AddTripCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FA67A82277D09F00250D4D /* AddTripCoordinator.swift */; };
 		83FA67AB2277D11E00250D4D /* AddTripController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FA67AA2277D11E00250D4D /* AddTripController.swift */; };
@@ -93,7 +92,6 @@
 		83DB902F227EB313003A68DE /* ToolBar+Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToolBar+Factory.swift"; sourceTree = "<group>"; };
 		83DB903222811CBF003A68DE /* TextFieldTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTypes.swift; sourceTree = "<group>"; };
 		83DB903422811D43003A68DE /* TextFieldValidators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldValidators.swift; sourceTree = "<group>"; };
-		83FA67A32277B11900250D4D /* PersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceManager.swift; sourceTree = "<group>"; };
 		83FA67A62277B20B00250D4D /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		83FA67A82277D09F00250D4D /* AddTripCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTripCoordinator.swift; sourceTree = "<group>"; };
 		83FA67AA2277D11E00250D4D /* AddTripController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTripController.swift; sourceTree = "<group>"; };
@@ -279,7 +277,6 @@
 		83FA67A22277B10800250D4D /* DataManaging */ = {
 			isa = PBXGroup;
 			children = (
-				83FA67A32277B11900250D4D /* PersistanceManager.swift */,
 				83B484552283954E002EA854 /* TripEditor.swift */,
 				83B484572283E352002EA854 /* DataManager.swift */,
 			);
@@ -446,7 +443,6 @@
 				831F2D1322769B2D00CA2226 /* HomeView.swift in Sources */,
 				831F2D1622769DDF00CA2226 /* Header.swift in Sources */,
 				83FA67BB227A60F500250D4D /* TripOverviewView.swift in Sources */,
-				83FA67A42277B11900250D4D /* PersistanceManager.swift in Sources */,
 				83FA67BD227A6EDE00250D4D /* Activity.swift in Sources */,
 				83DB902E227EAB8B003A68DE /* DatePicker+Factory.swift in Sources */,
 				831F2D1E2276AADA00CA2226 /* UIButton+Factorty.swift in Sources */,

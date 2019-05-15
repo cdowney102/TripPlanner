@@ -10,7 +10,7 @@ import Foundation
 
 protocol TripEditor {
     var trips: [String:Trip] { get set }
-    var selectedTrip: Trip? { get set }
+    var hasChanges: Bool { get set }
     
     mutating func didCreate(trip: Trip)
     mutating func didDelete(trip: Trip)
@@ -19,6 +19,7 @@ protocol TripEditor {
     mutating func didEditActivity(for trip: Trip, activity: Activity)
 }
 
+// MARK - implementation
 extension TripEditor {
     mutating func didCreate(trip: Trip) {
         trips[trip.id] = trip
@@ -27,15 +28,18 @@ extension TripEditor {
     mutating func didDelete(trip: Trip) {
         #warning("maybe rethink passing around just the id or actualy trip ref here in all these calls")
         trips.removeValue(forKey: trip.id)
+        hasChanges = true
     }
     
     mutating func didCreateActivity(for trip: Trip, activity: Activity) {
         trips[trip.id]?.activities.append(activity)
+        hasChanges = true
     }
     
     mutating func didDeleteActivity(from trip: Trip, activity: Activity) {
         let filteredList = trips[trip.id]?.activities.filter { $0 != activity } ?? []
         trips[trip.id]?.activities = filteredList
+        hasChanges = true
     }
 
     mutating func didEditActivity(for trip: Trip, activity: Activity) {
@@ -51,5 +55,6 @@ extension TripEditor {
                 trips[trip.id]?.activities[index] = activity
             }
         }
+        hasChanges = true
     }
 }

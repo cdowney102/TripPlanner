@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Activity: Equatable {
+struct Activity: Codable, Equatable {
     var id: String
     var name: String
     var estimatedCost: String
