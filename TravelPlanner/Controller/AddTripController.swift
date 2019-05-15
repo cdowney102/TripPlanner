@@ -12,6 +12,7 @@ class AddTripController: UIViewController {
 
     weak var coordinator: AddTripCoordinator?
     var dataManager: DataManager
+    var addView: AddTripView!
     private var trip: Trip?
 
     init(dataManager: DataManager) {
@@ -26,17 +27,28 @@ class AddTripController: UIViewController {
     override func loadView() {
         super.loadView()
 
-        let addView = AddTripView(frame: view.frame)
-        view.addSubview(addView)
+        addView = AddTripView(frame: view.frame)
+        view.addSubview(addView!)
         
         addView.header.backBtnAction = { [ weak self ] in
             self?.coordinator?.didCancel()
         }
         
         addView.addTripBtnAction = { [ weak self ] in
-            let trip = Trip(id: UUID().uuidString, startDate: "Sept 9, 2019", endDate: "Sept 11, 2019", destination: "San Diego", tripName: "LA Trip", activities: [])
-            self?.dataManager.didCreate(trip: trip)
-            self?.coordinator?.didFinishCreating()
+            #warning("make sure this is consistent - strong self vs jsut self?")
+            guard let strongSelf = self else { return }
+            let trip = Trip(id: UUID().uuidString, startDate: strongSelf.addView.startDate, endDate: strongSelf.addView.endDate, destination: strongSelf.addView.destination, tripName: strongSelf.addView.nickname, activities: [])
+            let validator = TextValidator()
+            do {
+                try validator.validate(input: trip.destination, fieldType: .destination)
+                try validator.validate(input: trip.startDate, fieldType: .startDate)
+                try validator.validate(input: trip.endDate, fieldType: .endDate)
+            } catch {
+                print(error.localizedDescription)
+                return
+            }
+            strongSelf.dataManager.didCreate(trip: trip)
+            strongSelf.coordinator?.didFinishCreating()
         }
         
         addView.header.btnAction = { [ weak self ] in

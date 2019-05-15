@@ -23,6 +23,7 @@ protocol TripEditor {
 extension TripEditor {
     mutating func didCreate(trip: Trip) {
         trips[trip.id] = trip
+        hasChanges = true
     }
     
     mutating func didDelete(trip: Trip) {

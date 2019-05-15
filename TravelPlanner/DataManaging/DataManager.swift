@@ -32,11 +32,11 @@ final class DataManager: TripEditor {
     
     func save() {
         if hasChanges {
-            print("writing")
             do {
                 let data = try JSONEncoder().encode(trips)
                 try data.write(to: fileURL)
             } catch {
+                #warning("change to error and below too")
                 print("Problem saving trips: \(error)")
             }
         }
@@ -44,7 +44,6 @@ final class DataManager: TripEditor {
     }
     
     func load() {
-        print("loading")
         do {
             let data = try Data(contentsOf: fileURL)
             let loadedTrips = try JSONDecoder().decode([String: Trip].self, from: data)

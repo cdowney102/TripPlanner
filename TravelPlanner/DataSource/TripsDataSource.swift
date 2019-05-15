@@ -18,9 +18,15 @@ class TripsDataSource: NSObject, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        var name = ""
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TripCell.identifier, for: indexPath) as! TripCell
         let trip = trips[indexPath.item]
-        cell.setLabelText(tripName: trip.tripName, date: trip.startDate, tripCost: trip.estimatedCost)
+        if trip.tripName == "" {
+            name = trip.destination
+        } else {
+            name = trip.tripName
+        }
+        cell.setLabelText(tripName: name, date: trip.startDate, tripCost: trip.estimatedCost)
         return cell
     }
     

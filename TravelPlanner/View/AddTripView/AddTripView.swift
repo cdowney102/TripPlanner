@@ -11,8 +11,14 @@ import UIKit
 
 class AddTripView: UIView {
     
-    lazy var header = Header(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height * 0.17))
     var addTripBtnAction: (() -> Void)?
+    var destination = ""
+    var nickname = ""
+    var startDate = ""
+    var endDate = ""
+    
+    // MARK - UI objects
+    lazy var header = Header(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height * 0.17))
     private let addButton = ButtonFactory(image: UIImage(named: "add.png")!).build()
     private let destinationTextField = TextFieldFactory(placeholder: "Destination").build()
     private let tripNameTextField = TextFieldFactory(placeholder: "Trip nickname").build()
@@ -103,6 +109,10 @@ extension AddTripView {
     }
     
     @objc private func addTrip() {
+        destination = destinationTextField.text ?? ""
+        nickname = tripNameTextField.text ?? ""
+        startDate = tripStartDate.text ?? ""
+        endDate = tripEndDate.text ?? ""
         addTripBtnAction?()
     }
     
