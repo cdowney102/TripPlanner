@@ -68,12 +68,12 @@ class TripCell: UICollectionViewCell {
             tripDate.leadingAnchor.constraint(equalTo: overlay.leadingAnchor, constant: 15),
             tripDate.trailingAnchor.constraint(equalTo: overlay.trailingAnchor),
             
-            tripEstimatedCost.topAnchor.constraint(equalTo: tripDate.bottomAnchor),
+            tripEstimatedCost.topAnchor.constraint(equalTo: tripDate.bottomAnchor, constant: -5),
             tripEstimatedCost.leadingAnchor.constraint(equalTo: tripDate.leadingAnchor),
             tripEstimatedCost.trailingAnchor.constraint(equalTo: tripDate.trailingAnchor),
             tripEstimatedCost.heightAnchor.constraint(equalTo: tripDate.heightAnchor),
             
-            tripTitle.bottomAnchor.constraint(equalTo: tripDate.topAnchor),
+            tripTitle.bottomAnchor.constraint(equalTo: tripDate.topAnchor, constant: 3),
             tripTitle.leadingAnchor.constraint(equalTo: tripDate.leadingAnchor),
             tripTitle.trailingAnchor.constraint(equalTo: tripDate.trailingAnchor),
             tripTitle.heightAnchor.constraint(equalTo: tripDate.heightAnchor),

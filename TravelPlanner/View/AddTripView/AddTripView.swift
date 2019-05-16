@@ -45,8 +45,7 @@ class AddTripView: UIView {
 extension AddTripView {
     private func setupHeader() {
         addSubview(header)
-        header.setupUI(destination: "New Trip", tripName: "Don't forget the phone charger!", estCost: "$0", btnType: .remove)
-        header.setBackgroundTo(.pastePink)
+        header.setupUI(destination: "New Trip", tripName: "Don't forget the phone charger!", estCost: "$0", btnType: .remove, color: .pastePink)
     }
     
     private func setupLabels() {
@@ -84,8 +83,8 @@ extension AddTripView {
         NSLayoutConstraint.activate([
             addButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             addButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -35),
-            addButton.heightAnchor.constraint(equalToConstant: 45),
-            addButton.widthAnchor.constraint(equalToConstant: 45)
+            addButton.heightAnchor.constraint(equalToConstant: 50),
+            addButton.widthAnchor.constraint(equalToConstant: 50)
             ])
     }
     

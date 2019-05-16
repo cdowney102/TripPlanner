@@ -56,7 +56,7 @@ extension HomeView: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: frame.width - 30, height: 100)
+        return CGSize(width: frame.width - 50, height: 100)
     }
 }
 
@@ -84,8 +84,7 @@ extension HomeView {
     }
     
     private func setupHeader() {
-        header.setupUI(destination: "My Trips", tripName: "Where to next?", estCost: "", btnType: .add)
-        header.setBackgroundTo(.pastelAqua)
+        header.setupUI(destination: "My Trips", tripName: "Where to next?", estCost: "", btnType: .add, color: .pastelAqua)
         addSubview(header)
         header.backButton.isHidden = true
     }

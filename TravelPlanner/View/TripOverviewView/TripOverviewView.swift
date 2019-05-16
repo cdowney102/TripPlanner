@@ -24,7 +24,7 @@ class TripOverviewView: UIView {
         setupButton()
         setupTableView()
     }
-    #warning("figure out emptyview on home. figure out text align in header coz back button issue. figure out textfield placement, spacing on add/edit scenes")
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -42,7 +42,6 @@ class TripOverviewView: UIView {
 
 extension TripOverviewView {
     private func setupHeader() {
-        header.setBackgroundTo(.pastelOrange)
         addSubview(header)
     }
     
@@ -63,8 +62,8 @@ extension TripOverviewView {
         NSLayoutConstraint.activate([
             addButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             addButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -25),
-            addButton.heightAnchor.constraint(equalToConstant: 75),
-            addButton.widthAnchor.constraint(equalToConstant: 75)
+            addButton.heightAnchor.constraint(equalToConstant: 50),
+            addButton.widthAnchor.constraint(equalToConstant: 50)
             ])
     }
     

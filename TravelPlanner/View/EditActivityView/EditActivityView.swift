@@ -15,15 +15,7 @@ class EditActivityView: UIView {
     let nameTextField = TextFieldFactory(placeholder: "Activity Name").build()
     let costTextField = TextFieldFactory(placeholder: "Estimated cost - $0").build()
     var updateBtnAction: (() -> Void)?
-    #warning("change to factory butotn after getting asset")
-    lazy var updateButton: UIButton = {
-        let button = UIButton(frame: .zero)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Update", for: .normal)
-        button.setTitleColor(.blue, for: .normal)
-        button.addTarget(self, action: #selector(updateTapped), for: .touchUpInside)
-        return button
-    }()
+    private var updateButton = ButtonFactory(image: UIImage(named: "pinkadd.png")!).build()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -40,7 +32,7 @@ class EditActivityView: UIView {
 
 extension EditActivityView {
     private func setupHeader() {
-        header.setBackgroundTo(.pastelBeige)
+//        header.setBackgroundTo(.pastelBeige)
         addSubview(header)
     }
     
@@ -70,8 +62,8 @@ extension EditActivityView {
         NSLayoutConstraint.activate([
             updateButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             updateButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -25),
-            updateButton.widthAnchor.constraint(equalToConstant: 80),
-            updateButton.heightAnchor.constraint(equalToConstant: 35)
+            updateButton.widthAnchor.constraint(equalToConstant: 50),
+            updateButton.heightAnchor.constraint(equalToConstant: 50)
             ])
     }
     

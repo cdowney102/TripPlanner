@@ -38,7 +38,13 @@ class TripOverviewController: UIViewController {
         super.loadView()
         
         tripOverviewView = TripOverviewView(frame: view.frame)
-        tripOverviewView.header.setupUI(destination: trip.destination, tripName: trip.tripName, estCost: trip.estimatedCost, btnType: .remove)
+        var subtitle = ""
+        if trip.tripName == "" {
+            subtitle = "(\(trip.destination))"
+        } else {
+            subtitle = trip.tripName
+        }
+        tripOverviewView.header.setupUI(destination: trip.destination, tripName: subtitle, estCost: trip.estimatedCost, btnType: .remove, color: .pastelOrange)
         view.addSubview(tripOverviewView)
         
         tripOverviewView.didSelectTripAt = { [ weak self ] index in

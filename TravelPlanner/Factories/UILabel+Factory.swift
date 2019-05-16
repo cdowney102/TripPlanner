@@ -21,6 +21,7 @@ final class LabelFactory {
         self.label.font = font
         self.label.text = text
         self.label.sizeToFit()
+        self.label.adjustsFontSizeToFitWidth = true
     }
     
     func build() -> UILabel {

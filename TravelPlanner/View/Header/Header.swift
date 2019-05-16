@@ -36,7 +36,9 @@ final class Header: UIView {
 }
 
 extension Header {
-    func setupUI(destination: String, tripName: String, estCost: String, btnType: ButtonType) {
+    func setupUI(destination: String, tripName: String, estCost: String, btnType: ButtonType, color: UIColor) {
+        backgroundColor = color
+        
         titleLabel = LabelFactory(text: destination, fontColor: .titleWhite, font: .titleFont).build()
         subtitleLabel = LabelFactory(text: tripName, fontColor: .titleWhite, font: .subTitleFont).build()
         estimatedCostLabel = LabelFactory(text: estCost, fontColor: .titleWhite, font: .SubSubTitleFont).build()
@@ -50,30 +52,56 @@ extension Header {
         addSubviews(titleLabel, subtitleLabel, estimatedCostLabel, button, backButton)
         #warning("change this - add button on right first, also maybe get rtid of this and use set labels outside - this setup should be internal -- make labels sizetofit adjusts fontsize")
         NSLayoutConstraint.activate([
-            backButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            backButton.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 15),
-            backButton.heightAnchor.constraint(equalToConstant: 35),
-            backButton.widthAnchor.constraint(equalToConstant: 35),
+            button.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25),
+            button.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 15),
+            button.heightAnchor.constraint(equalToConstant: 50),
+            button.widthAnchor.constraint(equalToConstant: 50),
             
-            estimatedCostLabel.leadingAnchor.constraint(equalTo: backButton.trailingAnchor, constant: 5),
-            estimatedCostLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
-            estimatedCostLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5),
-            estimatedCostLabel.heightAnchor.constraint(equalToConstant: 25),
+            backButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
+            backButton.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 20),
+            backButton.heightAnchor.constraint(equalToConstant: 30),
+            backButton.widthAnchor.constraint(equalToConstant: 30),
             
-            subtitleLabel.leadingAnchor.constraint(equalTo: estimatedCostLabel.leadingAnchor),
-            subtitleLabel.trailingAnchor.constraint(equalTo: estimatedCostLabel.trailingAnchor),
-            subtitleLabel.bottomAnchor.constraint(equalTo: estimatedCostLabel.topAnchor),
+            subtitleLabel.leadingAnchor.constraint(equalTo: backButton.trailingAnchor, constant: 10),
+            subtitleLabel.trailingAnchor.constraint(equalTo: button.leadingAnchor, constant: -10),
+            subtitleLabel.centerYAnchor.constraint(equalTo: backButton.centerYAnchor),
             subtitleLabel.heightAnchor.constraint(equalToConstant: 25),
             
-            titleLabel.leadingAnchor.constraint(equalTo: estimatedCostLabel.leadingAnchor),
-            titleLabel.trailingAnchor.constraint(equalTo: estimatedCostLabel.trailingAnchor),
-            titleLabel.bottomAnchor.constraint(equalTo: subtitleLabel.topAnchor),
+            titleLabel.leadingAnchor.constraint(equalTo: subtitleLabel.leadingAnchor),
+            titleLabel.trailingAnchor.constraint(equalTo: subtitleLabel.trailingAnchor),
+            titleLabel.bottomAnchor.constraint(equalTo: subtitleLabel.topAnchor, constant: 3),
             titleLabel.heightAnchor.constraint(equalToConstant: 25),
             
-            button.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
-            button.bottomAnchor.constraint(equalTo: subtitleLabel.bottomAnchor),
-            button.heightAnchor.constraint(equalToConstant: 50),
-            button.widthAnchor.constraint(equalToConstant: 50)
+            estimatedCostLabel.leadingAnchor.constraint(equalTo: subtitleLabel.leadingAnchor),
+            estimatedCostLabel.trailingAnchor.constraint(equalTo: subtitleLabel.trailingAnchor),
+            estimatedCostLabel.topAnchor.constraint(equalTo: subtitleLabel.bottomAnchor, constant: -5),
+            estimatedCostLabel.heightAnchor.constraint(equalToConstant: 25),
+            
+            // MARK - old
+//            backButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+//            backButton.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 15),
+//            backButton.heightAnchor.constraint(equalToConstant: 35),
+//            backButton.widthAnchor.constraint(equalToConstant: 35),
+//
+//            estimatedCostLabel.leadingAnchor.constraint(equalTo: backButton.trailingAnchor, constant: 5),
+//            estimatedCostLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
+//            estimatedCostLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5),
+//            estimatedCostLabel.heightAnchor.constraint(equalToConstant: 25),
+//
+//            subtitleLabel.leadingAnchor.constraint(equalTo: estimatedCostLabel.leadingAnchor),
+//            subtitleLabel.trailingAnchor.constraint(equalTo: estimatedCostLabel.trailingAnchor),
+//            subtitleLabel.bottomAnchor.constraint(equalTo: estimatedCostLabel.topAnchor),
+//            subtitleLabel.heightAnchor.constraint(equalToConstant: 25),
+//
+//            titleLabel.leadingAnchor.constraint(equalTo: estimatedCostLabel.leadingAnchor),
+//            titleLabel.trailingAnchor.constraint(equalTo: estimatedCostLabel.trailingAnchor),
+//            titleLabel.bottomAnchor.constraint(equalTo: subtitleLabel.topAnchor),
+//            titleLabel.heightAnchor.constraint(equalToConstant: 25),
+//
+//            button.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
+//            button.bottomAnchor.constraint(equalTo: subtitleLabel.bottomAnchor),
+//            button.heightAnchor.constraint(equalToConstant: 50),
+//            button.widthAnchor.constraint(equalToConstant: 50)
             ])
     }
     
@@ -92,9 +120,5 @@ extension Header {
         case .remove:
             button.setImage(UIImage(named: "pinkdelete.png"), for: .normal)
         }
-    }
-
-    func setBackgroundTo(_ color: UIColor) {
-        backgroundColor = color
     }
 }

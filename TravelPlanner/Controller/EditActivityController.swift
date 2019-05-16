@@ -30,7 +30,7 @@ class EditActivityController: UIViewController {
         let editView = EditActivityView(frame: view.frame)
         view.addSubview(editView)
         
-        editView.header.setupUI(destination: trip.destination, tripName: activity.name, estCost: activity.estimatedCost, btnType: .remove)
+        editView.header.setupUI(destination: trip.destination, tripName: activity.name, estCost: activity.estimatedCost, btnType: .remove, color: .pastelBeige)
         editView.nameTextField.text = activity.name
         editView.costTextField.text = activity.estimatedCost
         

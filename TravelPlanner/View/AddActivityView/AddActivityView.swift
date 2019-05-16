@@ -37,8 +37,7 @@ class AddActivityView: UIView {
 extension AddActivityView {
     private func setupHeader() {
         addSubview(header)
-        header.setupUI(destination: "What's the plan?", tripName: "decisions, decisions", estCost: "$0", btnType: .remove)
-        header.setBackgroundTo(.pastelPurple)
+        header.setupUI(destination: "What's the plan?", tripName: "decisions, decisions", estCost: "$0", btnType: .remove, color: .pastelPurple)
     }
     
     private func setupLabels() {
@@ -65,8 +64,8 @@ extension AddActivityView {
         addButton.addTarget(self, action: #selector(addTapped), for: .touchUpInside)
         NSLayoutConstraint.activate([
             addButton.centerXAnchor.constraint(equalTo: centerXAnchor),
-            addButton.widthAnchor.constraint(equalToConstant: 65),
-            addButton.heightAnchor.constraint(equalToConstant: 35),
+            addButton.widthAnchor.constraint(equalToConstant: 50),
+            addButton.heightAnchor.constraint(equalToConstant: 50),
             addButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -25)
             ])
     }
