@@ -52,16 +52,16 @@ extension EditActivityView {
         costTextField.addDoneButton()
         NSLayoutConstraint.activate([
             nameTextField.centerXAnchor.constraint(equalTo: centerXAnchor),
-            nameTextField.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -15),
-            nameTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25),
-            nameTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25),
-            nameTextField.heightAnchor.constraint(equalToConstant: 30),
+            nameTextField.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -35),
+            nameTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 35),
+            nameTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -35),
+            nameTextField.heightAnchor.constraint(equalToConstant: 25),
             
             costTextField.centerXAnchor.constraint(equalTo: centerXAnchor),
-            costTextField.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: 15),
+            costTextField.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: 45),
             costTextField.leadingAnchor.constraint(equalTo: nameTextField.leadingAnchor),
             costTextField.trailingAnchor.constraint(equalTo: nameTextField.trailingAnchor),
-            costTextField.heightAnchor.constraint(equalToConstant: 30)
+            costTextField.heightAnchor.constraint(equalToConstant: 25)
             ])
     }
     

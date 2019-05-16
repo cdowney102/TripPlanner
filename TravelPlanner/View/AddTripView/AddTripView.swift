@@ -57,24 +57,24 @@ extension AddTripView {
             tripNameTextField.centerXAnchor.constraint(equalTo: centerXAnchor),
             tripNameTextField.centerYAnchor.constraint(equalTo: centerYAnchor),
             tripNameTextField.heightAnchor.constraint(equalToConstant: 25),
-            tripNameTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25),
-            tripNameTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25),
+            tripNameTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 35),
+            tripNameTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -35),
             
             destinationTextField.centerXAnchor.constraint(equalTo: centerXAnchor),
-            destinationTextField.bottomAnchor.constraint(equalTo: tripNameTextField.topAnchor, constant: -25),
+            destinationTextField.bottomAnchor.constraint(equalTo: tripNameTextField.topAnchor, constant: -35),
             destinationTextField.heightAnchor.constraint(equalTo: tripNameTextField.heightAnchor),
             destinationTextField.leadingAnchor.constraint(equalTo: tripNameTextField.leadingAnchor),
             destinationTextField.trailingAnchor.constraint(equalTo: tripNameTextField.trailingAnchor),
             
-            tripStartDate.topAnchor.constraint(equalTo: tripNameTextField.bottomAnchor, constant: 25),
-            tripStartDate.leadingAnchor.constraint(equalTo: destinationTextField.leadingAnchor, constant: 15),
+            tripStartDate.topAnchor.constraint(equalTo: tripNameTextField.bottomAnchor, constant: 35),
+            tripStartDate.leadingAnchor.constraint(equalTo: destinationTextField.leadingAnchor),
             tripStartDate.heightAnchor.constraint(equalTo: tripNameTextField.heightAnchor),
-            tripStartDate.widthAnchor.constraint(equalToConstant: 100),
+            tripStartDate.widthAnchor.constraint(equalToConstant: 150),
             
-            tripEndDate.topAnchor.constraint(equalTo: tripNameTextField.bottomAnchor, constant: 25),
-            tripEndDate.trailingAnchor.constraint(equalTo: destinationTextField.trailingAnchor, constant: -15),
+            tripEndDate.topAnchor.constraint(equalTo: tripNameTextField.bottomAnchor, constant: 35),
+            tripEndDate.trailingAnchor.constraint(equalTo: destinationTextField.trailingAnchor),
             tripEndDate.heightAnchor.constraint(equalTo: tripNameTextField.heightAnchor),
-            tripEndDate.widthAnchor.constraint(equalToConstant: 100),
+            tripEndDate.widthAnchor.constraint(equalToConstant: 150),
             ])
     }
     

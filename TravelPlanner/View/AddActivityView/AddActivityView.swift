@@ -47,13 +47,13 @@ extension AddActivityView {
         estimatedCostTextField.addDoneButton()
         NSLayoutConstraint.activate([
             nameTextField.centerXAnchor.constraint(equalTo: centerXAnchor),
-            nameTextField.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -25),
+            nameTextField.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -35),
             nameTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 35),
             nameTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -35),
             nameTextField.heightAnchor.constraint(equalToConstant: 25),
             
             estimatedCostTextField.centerXAnchor.constraint(equalTo: centerXAnchor),
-            estimatedCostTextField.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: 25),
+            estimatedCostTextField.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: 45),
             estimatedCostTextField.leadingAnchor.constraint(equalTo: nameTextField.leadingAnchor),
             estimatedCostTextField.trailingAnchor.constraint(equalTo: nameTextField.trailingAnchor),
             estimatedCostTextField.heightAnchor.constraint(equalToConstant: 25)
