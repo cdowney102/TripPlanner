@@ -19,7 +19,7 @@ class TripOverviewView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .backgroundGray
+        backgroundColor = .white
         setupHeader()
         setupButton()
         setupTableView()
@@ -57,7 +57,7 @@ extension TripOverviewView {
     }
     
     private func setupButton() {
-        addButton = ButtonFactory(image: UIImage(named: "add.png")!).build()
+        addButton = ButtonFactory(image: UIImage(named: "pinkadd.png")!).build()
         addButton.addTarget(self, action: #selector(addTapped), for: .touchUpInside)
         addSubview(addButton)
         NSLayoutConstraint.activate([

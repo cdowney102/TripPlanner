@@ -18,7 +18,7 @@ class AddActivityView: UIView {
     lazy var header = Header(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height * 0.17))
     private var nameTextField = TextFieldFactory(placeholder: "Activity Name").build()
     private var estimatedCostTextField = TextFieldFactory(placeholder: "Estimated Cost").build()
-    private var addButton = ButtonFactory(image: UIImage(named: "add.png")!).build()
+    private var addButton = ButtonFactory(image: UIImage(named: "pinkadd.png")!).build()
     var addBtnAction: (() -> Void)?
 
     override init(frame: CGRect) {

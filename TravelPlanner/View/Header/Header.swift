@@ -40,15 +40,15 @@ extension Header {
         titleLabel = LabelFactory(text: destination, fontColor: .titleWhite, font: .titleFont).build()
         subtitleLabel = LabelFactory(text: tripName, fontColor: .titleWhite, font: .subTitleFont).build()
         estimatedCostLabel = LabelFactory(text: estCost, fontColor: .titleWhite, font: .SubSubTitleFont).build()
-        button = ButtonFactory(image: UIImage(named: "add.png")!).build()
-        backButton = ButtonFactory(image: UIImage(named: "left-arrow.png")!).build()
+        button = ButtonFactory(image: UIImage(named: "pinkadd.png")!).build()
+        backButton = ButtonFactory(image: UIImage(named: "left.png")!).build()
         
         backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
         button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         buttonType = btnType
         
         addSubviews(titleLabel, subtitleLabel, estimatedCostLabel, button, backButton)
-        
+        #warning("change this - add button on right first, also maybe get rtid of this and use set labels outside - this setup should be internal -- make labels sizetofit adjusts fontsize")
         NSLayoutConstraint.activate([
             backButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
             backButton.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 15),
@@ -88,12 +88,12 @@ extension Header {
     private func updateButton() {
         switch buttonType {
         case .add:
-            button.setImage(UIImage(named: "add.png"), for: .normal)
+            button.setImage(UIImage(named: "pinkadd.png"), for: .normal)
         case .remove:
-            button.setImage(UIImage(named: "delete.png"), for: .normal)
+            button.setImage(UIImage(named: "pinkdelete.png"), for: .normal)
         }
     }
-    
+
     func setBackgroundTo(_ color: UIColor) {
         backgroundColor = color
     }

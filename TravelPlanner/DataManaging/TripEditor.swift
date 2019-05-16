@@ -22,7 +22,12 @@ protocol TripEditor {
 // MARK - implementation
 extension TripEditor {
     mutating func didCreate(trip: Trip) {
-        trips[trip.id] = trip
+        for _ in 0..<37 {
+            let newId = UUID().uuidString
+            let newTrip = Trip(id: newId, startDate: "Sep 11", endDate: "Sep 11", destination: "Japan", tripName: "Tokyo trip", activities: [])
+            trips[newTrip.id] = newTrip
+        }
+//        trips[trip.id] = trip
         hasChanges = true
     }
     

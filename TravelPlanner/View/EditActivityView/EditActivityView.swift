@@ -40,6 +40,7 @@ class EditActivityView: UIView {
 
 extension EditActivityView {
     private func setupHeader() {
+        header.setBackgroundTo(.pastelBeige)
         addSubview(header)
     }
     
