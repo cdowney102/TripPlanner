@@ -24,7 +24,7 @@ class TripOverviewView: UIView {
         setupButton()
         setupTableView()
     }
-    #error("figure out emptyview on home. figure out text align in header coz back button issue. figure out textfield placement, spacing on add/edit scenes")
+    #warning("figure out emptyview on home. figure out text align in header coz back button issue. figure out textfield placement, spacing on add/edit scenes")
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
