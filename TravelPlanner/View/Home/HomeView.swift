@@ -14,6 +14,7 @@ class HomeView: UIView {
     var didSelect: ((_ trip: Trip) -> ())?
     let dataSource = TripsDataSource()
     lazy var header = Header(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height * 0.17))
+    private var emptyView = EmptyView(frame: .zero)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -60,6 +61,28 @@ extension HomeView: UICollectionViewDelegateFlowLayout {
 }
 
 extension HomeView {
+    func checkIfEmpty() {
+        if dataSource.trips.isEmpty {
+            showEmptyView()
+        } else {
+            removeEmptyView()
+        }
+    }
+    
+    private func showEmptyView() {
+        addSubview(emptyView)
+        NSLayoutConstraint.activate([
+            emptyView.topAnchor.constraint(equalTo: header.bottomAnchor),
+            emptyView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            emptyView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            emptyView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            ])
+    }
+    
+    private func removeEmptyView() {
+        emptyView.removeFromSuperview()
+    }
+    
     private func setupHeader() {
         header.setupUI(destination: "My Trips", tripName: "Where to next?", estCost: "", btnType: .add)
         header.setBackgroundTo(.pastelAqua)

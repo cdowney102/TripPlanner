@@ -48,8 +48,8 @@ class EmptyView: UIView {
         NSLayoutConstraint.activate([
             icon.centerXAnchor.constraint(equalTo: centerXAnchor),
             icon.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -35),
-            icon.heightAnchor.constraint(equalToConstant: 175),
-            icon.widthAnchor.constraint(equalToConstant: 150)
+            icon.heightAnchor.constraint(equalToConstant: 150),
+            icon.widthAnchor.constraint(equalToConstant: 125)
             ])
     }
 }

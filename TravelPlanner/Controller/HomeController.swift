@@ -28,6 +28,7 @@ class HomeController: UIViewController {
         homeView?.dataSource.trips = Array(dataManager.trips.values)
         homeView?.setTotalCost()
         homeView?.collectionView.reloadData()
+        homeView?.checkIfEmpty()
     }
     
     override func loadView() {
@@ -45,15 +46,6 @@ class HomeController: UIViewController {
         home.header.btnAction = { [ weak self ] in
             self?.create()
         }
-        
-//        let empty = EmptyView(frame: .zero)
-//        home.addSubview(empty)
-//        NSLayoutConstraint.activate([
-//            empty.topAnchor.constraint(equalTo: home.header.bottomAnchor),
-//            empty.leadingAnchor.constraint(equalTo: home.leadingAnchor),
-//            empty.trailingAnchor.constraint(equalTo: home.trailingAnchor),
-//            empty.bottomAnchor.constraint(equalTo: home.bottomAnchor)
-//            ])
     }
     
     func update(_ trip: Trip) {
