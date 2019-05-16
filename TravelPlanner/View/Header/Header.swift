@@ -15,11 +15,7 @@ enum ButtonType {
 
 final class Header: UIView {
     
-    var buttonType: ButtonType = .add {
-        didSet {
-            updateButton()
-        }
-    }
+    var buttonType: ButtonType = .add { didSet { updateButton() } }
     var titleLabel: UILabel!
     var subtitleLabel: UILabel!
     var estimatedCostLabel: UILabel!
@@ -32,7 +28,6 @@ final class Header: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        backgroundColor = .lightGray
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -42,9 +37,9 @@ final class Header: UIView {
 
 extension Header {
     func setupUI(destination: String, tripName: String, estCost: String, btnType: ButtonType) {
-        titleLabel = LabelFactory(text: destination, fontColor: .black, font: UIFont.systemFont(ofSize: 16)).build()
-        subtitleLabel = LabelFactory(text: tripName, fontColor: .black, font: UIFont.systemFont(ofSize: 14)).build()
-        estimatedCostLabel = LabelFactory(text: estCost, fontColor: .black, font: UIFont.systemFont(ofSize: 14)).build()
+        titleLabel = LabelFactory(text: destination, fontColor: .titleWhite, font: .titleFont).build()
+        subtitleLabel = LabelFactory(text: tripName, fontColor: .titleWhite, font: .subTitleFont).build()
+        estimatedCostLabel = LabelFactory(text: estCost, fontColor: .titleWhite, font: .SubSubTitleFont).build()
         button = ButtonFactory(image: UIImage(named: "add.png")!).build()
         backButton = ButtonFactory(image: UIImage(named: "left-arrow.png")!).build()
         
@@ -90,12 +85,16 @@ extension Header {
         btnAction?()
     }
     
-    func updateButton() {
+    private func updateButton() {
         switch buttonType {
         case .add:
             button.setImage(UIImage(named: "add.png"), for: .normal)
         case .remove:
             button.setImage(UIImage(named: "delete.png"), for: .normal)
         }
+    }
+    
+    func setBackgroundTo(_ color: UIColor) {
+        backgroundColor = color
     }
 }

@@ -17,7 +17,7 @@ class HomeView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .white
+        backgroundColor = .backgroundGray
         setupHeader()
         setupTrips()
     }
@@ -33,6 +33,7 @@ class HomeView: UIView {
         cv.delegate = self
         cv.register(TripCell.self, forCellWithReuseIdentifier: TripCell.identifier)
         cv.showsVerticalScrollIndicator = false
+        cv.backgroundColor = .backgroundGray
         return cv
     }()
 }
@@ -61,6 +62,7 @@ extension HomeView: UICollectionViewDelegateFlowLayout {
 extension HomeView {
     private func setupHeader() {
         header.setupUI(destination: "My Trips", tripName: "Where to next?", estCost: "", btnType: .add)
+        header.setBackgroundTo(.pastelAqua)
         addSubview(header)
         header.backButton.isHidden = true
     }

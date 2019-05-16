@@ -13,8 +13,8 @@ class ActivityCell: UITableViewCell {
     
     static let identifier = "ActivityCell"
     
-    var nameLabel = LabelFactory(text: "Activity Name", fontColor: .black, font: .systemFont(ofSize: 16)).build()
-    var costLabel = LabelFactory(text: "$22", fontColor: .black, font: .systemFont(ofSize: 16)).build()
+    var nameLabel = LabelFactory(text: "Activity Name", fontColor: .inputGray, font: .activityListNameFont).build()
+    var costLabel = LabelFactory(text: "$22", fontColor: .inputGray, font: .activityListCostFont).build()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .default, reuseIdentifier: ActivityCell.identifier)
@@ -39,7 +39,7 @@ class ActivityCell: UITableViewCell {
             nameLabel.centerYAnchor.constraint(equalTo: centerYAnchor)
             ])
     }
-    #warning("do sth wih spaces when trip doesnt have nick name - just put default")
+    #warning("do sth wih spaces when trip doesnt have nick name - just put generic placeholder")
     func setupUI(activityName: String, cost: String) {
         nameLabel.text = activityName
         costLabel.text = "$\(cost)"

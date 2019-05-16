@@ -30,7 +30,7 @@ class AddTripView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .white
+        backgroundColor = .backgroundGray
         setupHeader()
         setupButton()
         setupLabels()
@@ -46,6 +46,7 @@ extension AddTripView {
     private func setupHeader() {
         addSubview(header)
         header.setupUI(destination: "New Trip", tripName: "Don't forget the phone charger!", estCost: "$0", btnType: .remove)
+        header.setBackgroundTo(.pastePink)
     }
     
     private func setupLabels() {

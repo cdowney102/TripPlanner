@@ -41,6 +41,7 @@ class TripOverviewView: UIView {
 
 extension TripOverviewView {
     private func setupHeader() {
+        header.setBackgroundTo(.pastelOrange)
         addSubview(header)
     }
     

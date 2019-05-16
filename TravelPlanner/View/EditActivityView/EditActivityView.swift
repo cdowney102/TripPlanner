@@ -27,7 +27,7 @@ class EditActivityView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .white
+        backgroundColor = .backgroundGray
         setupHeader()
         setupLabels()
         setupButton()

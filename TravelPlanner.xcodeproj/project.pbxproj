@@ -36,6 +36,11 @@
 		83DB903322811CBF003A68DE /* TextFieldTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DB903222811CBF003A68DE /* TextFieldTypes.swift */; };
 		83DB903522811D43003A68DE /* TextFieldValidators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DB903422811D43003A68DE /* TextFieldValidators.swift */; };
 		83E20B31228CB8E000CEAA95 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E20B30228CB8E000CEAA95 /* String+Extensions.swift */; };
+		83E20B34228CEA9500CEAA95 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E20B33228CEA9500CEAA95 /* Colors.swift */; };
+		83E20B36228CED4800CEAA95 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E20B35228CED4800CEAA95 /* Fonts.swift */; };
+		83E20B38228CF2FC00CEAA95 /* OverlayViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E20B37228CF2FC00CEAA95 /* OverlayViewFactory.swift */; };
+		83E20B3C228D0FD800CEAA95 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E20B3B228D0FD800CEAA95 /* UIImageView+Extensions.swift */; };
+		83E20B3E228D110300CEAA95 /* UIImageViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E20B3D228D110300CEAA95 /* UIImageViewFactory.swift */; };
 		83FA67A72277B20B00250D4D /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FA67A62277B20B00250D4D /* Trip.swift */; };
 		83FA67A92277D09F00250D4D /* AddTripCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FA67A82277D09F00250D4D /* AddTripCoordinator.swift */; };
 		83FA67AB2277D11E00250D4D /* AddTripController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FA67AA2277D11E00250D4D /* AddTripController.swift */; };
@@ -94,6 +99,11 @@
 		83DB903222811CBF003A68DE /* TextFieldTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTypes.swift; sourceTree = "<group>"; };
 		83DB903422811D43003A68DE /* TextFieldValidators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldValidators.swift; sourceTree = "<group>"; };
 		83E20B30228CB8E000CEAA95 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		83E20B33228CEA9500CEAA95 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		83E20B35228CED4800CEAA95 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		83E20B37228CF2FC00CEAA95 /* OverlayViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayViewFactory.swift; sourceTree = "<group>"; };
+		83E20B3B228D0FD800CEAA95 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
+		83E20B3D228D110300CEAA95 /* UIImageViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewFactory.swift; sourceTree = "<group>"; };
 		83FA67A62277B20B00250D4D /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		83FA67A82277D09F00250D4D /* AddTripCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTripCoordinator.swift; sourceTree = "<group>"; };
 		83FA67AA2277D11E00250D4D /* AddTripController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTripController.swift; sourceTree = "<group>"; };
@@ -147,6 +157,7 @@
 		831F2CEB2276977400CA2226 /* TravelPlanner */ = {
 			isa = PBXGroup;
 			children = (
+				83E20B32228CEA8600CEAA95 /* Constants */,
 				831F2D1A22769E6E00CA2226 /* Extensions */,
 				83DB903122811CA8003A68DE /* Helpers */,
 				83FA67B0227A2A4400250D4D /* DataSource */,
@@ -218,6 +229,8 @@
 				83DB902B227EA84C003A68DE /* DateFormatter+Factory.swift */,
 				83DB902D227EAB8B003A68DE /* DatePicker+Factory.swift */,
 				83DB902F227EB313003A68DE /* ToolBar+Factory.swift */,
+				83E20B37228CF2FC00CEAA95 /* OverlayViewFactory.swift */,
+				83E20B3D228D110300CEAA95 /* UIImageViewFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -228,6 +241,7 @@
 				831F2D1B22769E7D00CA2226 /* UIView+Extensions.swift */,
 				839047B3228A63CA00C6EB99 /* UITextField+Extensions.swift */,
 				83E20B30228CB8E000CEAA95 /* String+Extensions.swift */,
+				83E20B3B228D0FD800CEAA95 /* UIImageView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -263,6 +277,15 @@
 				83DB903422811D43003A68DE /* TextFieldValidators.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		83E20B32228CEA8600CEAA95 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				83E20B33228CEA9500CEAA95 /* Colors.swift */,
+				83E20B35228CED4800CEAA95 /* Fonts.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		83FA67A12277B0F000250D4D /* Controller */ = {
@@ -431,6 +454,7 @@
 			files = (
 				83FA67C1227A736500250D4D /* ActivityCell.swift in Sources */,
 				834B2528227BD95E00EFC1E0 /* AddActivityView.swift in Sources */,
+				83E20B3E228D110300CEAA95 /* UIImageViewFactory.swift in Sources */,
 				834B2521227BC85400EFC1E0 /* EditActivityView.swift in Sources */,
 				834B251E227BB1A300EFC1E0 /* EditActivityController.swift in Sources */,
 				83FA67A72277B20B00250D4D /* Trip.swift in Sources */,
@@ -445,8 +469,10 @@
 				83DB9027227E4093003A68DE /* AddTripView.swift in Sources */,
 				831F2D1322769B2D00CA2226 /* HomeView.swift in Sources */,
 				831F2D1622769DDF00CA2226 /* Header.swift in Sources */,
+				83E20B36228CED4800CEAA95 /* Fonts.swift in Sources */,
 				83FA67BB227A60F500250D4D /* TripOverviewView.swift in Sources */,
 				83FA67BD227A6EDE00250D4D /* Activity.swift in Sources */,
+				83E20B38228CF2FC00CEAA95 /* OverlayViewFactory.swift in Sources */,
 				83DB902E227EAB8B003A68DE /* DatePicker+Factory.swift in Sources */,
 				831F2D1E2276AADA00CA2226 /* UIButton+Factorty.swift in Sources */,
 				83FA67B4227A4CCF00250D4D /* TripOverviewCoordinator.swift in Sources */,
@@ -463,6 +489,8 @@
 				831F2D1C22769E7D00CA2226 /* UIView+Extensions.swift in Sources */,
 				83E20B31228CB8E000CEAA95 /* String+Extensions.swift in Sources */,
 				83FA67A92277D09F00250D4D /* AddTripCoordinator.swift in Sources */,
+				83E20B3C228D0FD800CEAA95 /* UIImageView+Extensions.swift in Sources */,
+				83E20B34228CEA9500CEAA95 /* Colors.swift in Sources */,
 				83FA67AF22792AA500250D4D /* EmptyView.swift in Sources */,
 				83FA67B2227A2A7100250D4D /* TripsDataSource.swift in Sources */,
 				83FA67B8227A584700250D4D /* TripCell.swift in Sources */,

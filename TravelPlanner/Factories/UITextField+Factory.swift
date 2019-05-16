@@ -18,6 +18,8 @@ class TextFieldFactory {
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.placeholder = placeholder
         textField.textAlignment = .center
+        textField.textColor = .inputGray
+        textField.font = .textFieldFont
         addBottomBorder()
     }
     
@@ -30,7 +32,7 @@ extension TextFieldFactory {
     private func addBottomBorder() {
         let border = UIView(frame: .zero)
         border.translatesAutoresizingMaskIntoConstraints = false
-        border.backgroundColor = .black
+        border.backgroundColor = .inputGray
         textField.addSubview(border)
         NSLayoutConstraint.activate([
             border.leadingAnchor.constraint(equalTo: textField.leadingAnchor),

@@ -23,7 +23,7 @@ class AddActivityView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .white
+        backgroundColor = .backgroundGray
         setupHeader()
         setupLabels()
         setupButton()
@@ -38,6 +38,7 @@ extension AddActivityView {
     private func setupHeader() {
         addSubview(header)
         header.setupUI(destination: "What's the plan?", tripName: "decisions, decisions", estCost: "$0", btnType: .remove)
+        header.setBackgroundTo(.pastelPurple)
     }
     
     private func setupLabels() {
