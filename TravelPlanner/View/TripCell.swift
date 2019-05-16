@@ -21,6 +21,7 @@ class TripCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
 //        layer.cornerRadius = 15
+        backgroundColor = .white
         addShadow(cornerRadius: 15)
         setupImageView()
         setupOverlay()
@@ -39,16 +40,18 @@ class TripCell: UICollectionViewCell {
     
     private func setupImageView() {
         addSubview(imageView)
+        imageView.layer.cornerRadius = 15
         NSLayoutConstraint.activate([
-            imageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
-            imageView.topAnchor.constraint(equalTo: topAnchor, constant: 5),
-            imageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
-            imageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5)
+            imageView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            imageView.topAnchor.constraint(equalTo: topAnchor),
+            imageView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            imageView.bottomAnchor.constraint(equalTo: bottomAnchor)
             ])
     }
     
     private func setupOverlay() {
         imageView.addSubview(overlay)
+        overlay.layer.cornerRadius = 15
         NSLayoutConstraint.activate([
             overlay.leadingAnchor.constraint(equalTo: imageView.leadingAnchor),
             overlay.topAnchor.constraint(equalTo: imageView.topAnchor),
@@ -66,7 +69,7 @@ class TripCell: UICollectionViewCell {
             tripDate.trailingAnchor.constraint(equalTo: overlay.trailingAnchor),
             
             tripEstimatedCost.topAnchor.constraint(equalTo: tripDate.bottomAnchor),
-            tripEstimatedCost.leadingAnchor.constraint(equalTo: tripDate.leadingAnchor, constant: 15),
+            tripEstimatedCost.leadingAnchor.constraint(equalTo: tripDate.leadingAnchor),
             tripEstimatedCost.trailingAnchor.constraint(equalTo: tripDate.trailingAnchor),
             tripEstimatedCost.heightAnchor.constraint(equalTo: tripDate.heightAnchor),
             

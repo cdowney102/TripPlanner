@@ -17,6 +17,7 @@ class ImageViewFactory {
         imageView = UIImageView(frame: .zero)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
         imageView.setRandomImage()
     }
     

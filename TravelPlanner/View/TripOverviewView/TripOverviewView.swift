@@ -19,11 +19,12 @@ class TripOverviewView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        backgroundColor = .backgroundGray
         setupHeader()
         setupButton()
         setupTableView()
     }
-    
+    #error("figure out emptyview on home. figure out text align in header coz back button issue. figure out textfield placement, spacing on add/edit scenes")
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

@@ -20,6 +20,7 @@ extension UIImageView {
             random = Int.random(in: 1..<37)
             image = UIImage(named: "\(random).png")!
         }
+        self.image = image
         UIImageView.usedImageCache.insert(image)
     }
 }
