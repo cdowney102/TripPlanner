@@ -32,7 +32,6 @@ class EditActivityView: UIView {
 
 extension EditActivityView {
     private func setupHeader() {
-//        header.setBackgroundTo(.pastelBeige)
         addSubview(header)
     }
     
@@ -59,11 +58,12 @@ extension EditActivityView {
     
     private func setupButton() {
         addSubview(updateButton)
+        updateButton.addTarget(self, action: #selector(updateTapped), for: .touchUpInside)
         NSLayoutConstraint.activate([
             updateButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             updateButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -25),
-            updateButton.widthAnchor.constraint(equalToConstant: 50),
-            updateButton.heightAnchor.constraint(equalToConstant: 50)
+            updateButton.widthAnchor.constraint(equalToConstant: 60),
+            updateButton.heightAnchor.constraint(equalToConstant: 60)
             ])
     }
     

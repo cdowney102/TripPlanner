@@ -42,7 +42,10 @@ class HomeView: UIView {
 extension HomeView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let trip = dataSource.fetchTripAtIndex(indexPath.item)
-        didSelect?(trip)
+        collectionView.cellForItem(at: indexPath)?.fireTapAnimation { [ weak self ] in
+            guard let strongSelf = self else { return }
+            strongSelf.didSelect?(trip)
+        }
     }
 }
 

@@ -20,7 +20,6 @@ class TripCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-//        layer.cornerRadius = 15
         backgroundColor = .white
         addShadow(cornerRadius: 15)
         setupImageView()

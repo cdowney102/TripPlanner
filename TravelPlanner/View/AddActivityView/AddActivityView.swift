@@ -64,8 +64,8 @@ extension AddActivityView {
         addButton.addTarget(self, action: #selector(addTapped), for: .touchUpInside)
         NSLayoutConstraint.activate([
             addButton.centerXAnchor.constraint(equalTo: centerXAnchor),
-            addButton.widthAnchor.constraint(equalToConstant: 50),
-            addButton.heightAnchor.constraint(equalToConstant: 50),
+            addButton.widthAnchor.constraint(equalToConstant: 60),
+            addButton.heightAnchor.constraint(equalToConstant: 60),
             addButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -25)
             ])
     }

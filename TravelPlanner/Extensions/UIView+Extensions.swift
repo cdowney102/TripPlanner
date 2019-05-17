@@ -24,3 +24,22 @@ extension UIView {
         if let radius = cornerRadius { self.layer.cornerRadius = radius }
     }
 }
+
+extension UIView {
+    private func growBack() {
+        UIView.animate(withDuration: 0.15) {
+            self.transform = CGAffineTransform(scaleX: 1, y: 1)
+            self.setNeedsLayout()
+        }
+    }
+    
+    func fireTapAnimation(completion: @escaping () -> Void) {
+        UIView.animate(withDuration: 0.2, animations: {
+            self.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+            self.setNeedsLayout()
+        }) { _ in
+            self.growBack()
+            completion()
+        }
+    }
+}

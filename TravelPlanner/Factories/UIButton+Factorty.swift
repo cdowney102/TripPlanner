@@ -16,6 +16,7 @@ final class ButtonFactory {
     init(image: UIImage) {
         button = UIButton()
         button.setImage(image, for: .normal)
+        button.addShadow(cornerRadius: nil)
         button.translatesAutoresizingMaskIntoConstraints = false
     }
     

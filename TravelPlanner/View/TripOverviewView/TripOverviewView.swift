@@ -62,8 +62,8 @@ extension TripOverviewView {
         NSLayoutConstraint.activate([
             addButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             addButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -25),
-            addButton.heightAnchor.constraint(equalToConstant: 50),
-            addButton.widthAnchor.constraint(equalToConstant: 50)
+            addButton.heightAnchor.constraint(equalToConstant: 60),
+            addButton.widthAnchor.constraint(equalToConstant: 60)
             ])
     }
     
