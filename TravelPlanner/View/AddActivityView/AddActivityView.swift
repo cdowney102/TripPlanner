@@ -74,6 +74,9 @@ extension AddActivityView {
         name = nameTextField.text ?? ""
         cost = estimatedCostTextField.text ?? "0"
         if cost == "" { cost = "0" }
-        addBtnAction?()
+        addButton.fireButtonTapAnimation { [ weak self ] in
+            guard let strongSelf = self else { return }
+            strongSelf.addBtnAction?()
+        }
     }
 }

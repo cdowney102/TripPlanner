@@ -47,7 +47,7 @@ class EmptyView: UIView {
         addSubview(icon)
         NSLayoutConstraint.activate([
             icon.centerXAnchor.constraint(equalTo: centerXAnchor),
-            icon.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -35),
+            icon.topAnchor.constraint(equalTo: topAnchor, constant: 125),
             icon.heightAnchor.constraint(equalToConstant: 150),
             icon.widthAnchor.constraint(equalToConstant: 125)
             ])

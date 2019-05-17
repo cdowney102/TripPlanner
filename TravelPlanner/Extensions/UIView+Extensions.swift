@@ -42,4 +42,14 @@ extension UIView {
             completion()
         }
     }
+    
+    func fireButtonTapAnimation(completion: @escaping () -> Void) {
+        UIView.animate(withDuration: 0.15, animations: {
+            self.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+            self.setNeedsLayout()
+        }) { _ in
+            self.growBack()
+            completion()
+        }
+    }
 }

@@ -42,7 +42,7 @@ class HomeView: UIView {
 extension HomeView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let trip = dataSource.fetchTripAtIndex(indexPath.item)
-        collectionView.cellForItem(at: indexPath)?.fireTapAnimation { [ weak self ] in
+        collectionView.cellForItem(at: indexPath)?.fireButtonTapAnimation { [ weak self ] in
             guard let strongSelf = self else { return }
             strongSelf.didSelect?(trip)
         }
@@ -103,13 +103,12 @@ extension HomeView {
     }
     
     private func setupEmptyView() {
-        let empty = EmptyView(frame: frame)
-        addSubview(empty)
+        addSubview(emptyView)
         NSLayoutConstraint.activate([
-            empty.leadingAnchor.constraint(equalTo: leadingAnchor),
-            empty.trailingAnchor.constraint(equalTo: trailingAnchor),
-            empty.topAnchor.constraint(equalTo: header.bottomAnchor),
-            empty.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
+            emptyView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            emptyView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            emptyView.topAnchor.constraint(equalTo: header.bottomAnchor),
+            emptyView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
             ])
     }
     

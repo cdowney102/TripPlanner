@@ -68,7 +68,10 @@ extension EditActivityView {
     }
     
     @objc private func updateTapped() {
-        updateBtnAction?()
+        updateButton.fireButtonTapAnimation { [ weak self ] in
+            guard let strongSelf = self else { return }
+            strongSelf.updateBtnAction?()
+        }
     }
 }
 

@@ -110,7 +110,10 @@ extension Header {
     }
     
     @objc private func buttonTapped() {
-        btnAction?()
+        button.fireTapAnimation { [ weak self ] in
+            guard let strongSelf = self else { return }
+            strongSelf.btnAction?()
+        }
     }
     
     private func updateButton() {
