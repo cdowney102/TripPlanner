@@ -34,4 +34,13 @@ struct TextValidator: Validator {}
 // MARK - Errors
 enum ValidationError: Error {
     case emptyFields, invalidNumber
+    
+    var localizedDescription: String {
+        switch self {
+        case .emptyFields:
+            return NSLocalizedString("Fill out all fields", comment: "")
+        default:
+            return NSLocalizedString("Invalid number for cost", comment: "")
+        }
+    }
 }

@@ -52,7 +52,15 @@ class EditActivityController: UIViewController {
             }
             
             if editView.costTextField.text != "" {
-                strongSelf.activity.estimatedCost = editView.costTextField.text ?? "0"
+                let validator = TextValidator()
+                do {
+                    try validator.validate(input: editView.costTextField.text ?? "", fieldType: .cost)
+                    strongSelf.activity.estimatedCost = editView.costTextField.text ?? "0"
+                } catch {
+                    guard let error = error as? ValidationError else { return }
+                    strongSelf.showAlertWith(title: "Whoops...", message: error.localizedDescription)
+                    return
+                }
             }
             strongSelf.dataManager.didEditActivity(for: strongSelf.trip, activity: strongSelf.activity)
             strongSelf.coordinator?.didCancel()

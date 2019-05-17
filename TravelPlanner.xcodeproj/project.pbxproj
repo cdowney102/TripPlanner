@@ -35,6 +35,7 @@
 		83DB9030227EB313003A68DE /* ToolBar+Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DB902F227EB313003A68DE /* ToolBar+Factory.swift */; };
 		83DB903322811CBF003A68DE /* TextFieldTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DB903222811CBF003A68DE /* TextFieldTypes.swift */; };
 		83DB903522811D43003A68DE /* TextFieldValidators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DB903422811D43003A68DE /* TextFieldValidators.swift */; };
+		83E11A21228F65C300F0DC91 /* UIVIewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E11A20228F65C300F0DC91 /* UIVIewController+Extensions.swift */; };
 		83E20B31228CB8E000CEAA95 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E20B30228CB8E000CEAA95 /* String+Extensions.swift */; };
 		83E20B34228CEA9500CEAA95 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E20B33228CEA9500CEAA95 /* Colors.swift */; };
 		83E20B36228CED4800CEAA95 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E20B35228CED4800CEAA95 /* Fonts.swift */; };
@@ -98,6 +99,7 @@
 		83DB902F227EB313003A68DE /* ToolBar+Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToolBar+Factory.swift"; sourceTree = "<group>"; };
 		83DB903222811CBF003A68DE /* TextFieldTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTypes.swift; sourceTree = "<group>"; };
 		83DB903422811D43003A68DE /* TextFieldValidators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldValidators.swift; sourceTree = "<group>"; };
+		83E11A20228F65C300F0DC91 /* UIVIewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVIewController+Extensions.swift"; sourceTree = "<group>"; };
 		83E20B30228CB8E000CEAA95 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		83E20B33228CEA9500CEAA95 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		83E20B35228CED4800CEAA95 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 				839047B3228A63CA00C6EB99 /* UITextField+Extensions.swift */,
 				83E20B30228CB8E000CEAA95 /* String+Extensions.swift */,
 				83E20B3B228D0FD800CEAA95 /* UIImageView+Extensions.swift */,
+				83E11A20228F65C300F0DC91 /* UIVIewController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -484,6 +487,7 @@
 				83B484562283954E002EA854 /* TripEditor.swift in Sources */,
 				834B252A227BDBCF00EFC1E0 /* AddActivityCoordinator.swift in Sources */,
 				834B251C227BB15100EFC1E0 /* EditActivityCoordinator.swift in Sources */,
+				83E11A21228F65C300F0DC91 /* UIVIewController+Extensions.swift in Sources */,
 				83DB9030227EB313003A68DE /* ToolBar+Factory.swift in Sources */,
 				83DB903322811CBF003A68DE /* TextFieldTypes.swift in Sources */,
 				831F2D1C22769E7D00CA2226 /* UIView+Extensions.swift in Sources */,

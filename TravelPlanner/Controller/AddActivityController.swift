@@ -38,7 +38,8 @@ class AddActivityController: UIViewController {
                 try validator.validate(input: activity.name, fieldType: .destination)
                 try validator.validate(input: activity.estimatedCost, fieldType: .cost)
             } catch {
-                print(error.localizedDescription)
+                guard let error = error as? ValidationError else { return }
+                self?.showAlertWith(title: "Wait...", message: error.localizedDescription)
                 return
             }
             strongSelf.dataManager.didCreateActivity(for: strongSelf.trip, activity: activity)

@@ -44,7 +44,8 @@ class AddTripController: UIViewController {
                 try validator.validate(input: trip.startDate, fieldType: .startDate)
                 try validator.validate(input: trip.endDate, fieldType: .endDate)
             } catch {
-                print(error.localizedDescription)
+                guard let error = error as? ValidationError else { return }
+                self?.showAlertWith(title: "Wait...", message: error.localizedDescription)
                 return
             }
             strongSelf.dataManager.didCreate(trip: trip)
