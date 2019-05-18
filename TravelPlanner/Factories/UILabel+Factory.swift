@@ -14,14 +14,14 @@ final class LabelFactory {
     private let label: UILabel
     
     init(text: String, fontColor: UIColor, font: UIFont) {
-        self.label = UILabel()
-        self.label.textAlignment = .left
-        self.label.translatesAutoresizingMaskIntoConstraints = false
-        self.label.textColor = fontColor
-        self.label.font = font
-        self.label.text = text
-        self.label.sizeToFit()
-        self.label.adjustsFontSizeToFitWidth = true
+        label = UILabel()
+        label.textAlignment = .left
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = fontColor
+        label.font = font
+        label.text = text
+        label.sizeToFit()
+        label.adjustsFontSizeToFitWidth = true
     }
     
     func build() -> UILabel {

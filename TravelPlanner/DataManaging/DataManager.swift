@@ -36,7 +36,6 @@ final class DataManager: TripEditor {
                 let data = try JSONEncoder().encode(trips)
                 try data.write(to: fileURL)
             } catch {
-                #warning("change to error and below too")
                 print("Problem saving trips: \(error)")
             }
         }

@@ -27,7 +27,6 @@ extension TripEditor {
     }
     
     mutating func didDelete(trip: Trip) {
-        #warning("maybe rethink passing around just the id or actualy trip ref here in all these calls")
         trips.removeValue(forKey: trip.id)
         hasChanges = true
     }
@@ -44,7 +43,6 @@ extension TripEditor {
     }
 
     mutating func didEditActivity(for trip: Trip, activity: Activity) {
-        #warning("this is ugly")
         if let activityList = trips[trip.id]?.activities {
             var foundIndex: Int? = nil
             for (index, item) in activityList.enumerated() {

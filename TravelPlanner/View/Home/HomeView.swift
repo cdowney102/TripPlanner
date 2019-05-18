@@ -11,10 +11,10 @@ import UIKit
 
 class HomeView: UIView {
     
-    var didSelect: ((_ trip: Trip) -> ())?
-    let dataSource = TripsDataSource()
     lazy var header = Header(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height * 0.17))
     private var emptyView = EmptyView(frame: .zero)
+    var didSelect: ((_ trip: Trip) -> ())?
+    let dataSource = TripsDataSource()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -42,7 +42,7 @@ class HomeView: UIView {
 extension HomeView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let trip = dataSource.fetchTripAtIndex(indexPath.item)
-        collectionView.cellForItem(at: indexPath)?.fireButtonTapAnimation { [ weak self ] in
+        collectionView.cellForItem(at: indexPath)?.fireTapAnimation { [ weak self ] in
             guard let strongSelf = self else { return }
             strongSelf.didSelect?(trip)
         }

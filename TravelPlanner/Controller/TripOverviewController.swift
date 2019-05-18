@@ -12,13 +12,9 @@ import UIKit
 
 class TripOverviewController: UIViewController {
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-    
     weak var coordinator: TripOverviewCoordinator?
+    lazy var tripOverviewView = TripOverviewView(frame: view.frame)
     var dataManager: DataManager
-    var tripOverviewView: TripOverviewView!
     var trip: Trip!
 
     init(dataManager: DataManager) {
@@ -40,16 +36,24 @@ class TripOverviewController: UIViewController {
     
     override func loadView() {
         super.loadView()
-        
-        tripOverviewView = TripOverviewView(frame: view.frame)
+        setupUI()
+    }
+}
+
+// MARK - UI setup
+extension TripOverviewController {
+    private func setupUI() {
         var subtitle = ""
+        // nickname is optional so check for it
         if trip.tripName == "" {
             subtitle = "(\(trip.destination))"
         } else {
             subtitle = trip.tripName
         }
-        tripOverviewView.header.setupUI(destination: trip.destination, tripName: subtitle, estCost: trip.estimatedCost, btnType: .remove, color: .pastelOrange)
+        
         view.addSubview(tripOverviewView)
+        
+        tripOverviewView.header.setupUI(destination: trip.destination, tripName: subtitle, estCost: trip.estimatedCost, btnType: .remove, color: .pastelOrange)
         
         tripOverviewView.didSelectTripAt = { [ weak self ] index in
             guard let strongSelf = self else { return }
@@ -60,7 +64,7 @@ class TripOverviewController: UIViewController {
             guard let strongSelf = self else { return }
             strongSelf.coordinator?.addActivity()
         }
-
+        
         tripOverviewView.header.backBtnAction = { [ weak self ] in
             guard let strongSelf = self else { return }
             strongSelf.coordinator?.didCancel()
@@ -74,3 +78,9 @@ class TripOverviewController: UIViewController {
     }
 }
 
+// MARK - status bar color
+extension TripOverviewController {
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+}

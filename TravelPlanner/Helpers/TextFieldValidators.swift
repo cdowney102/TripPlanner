@@ -5,7 +5,7 @@
 //  Created by christopher downey on 5/6/19.
 //  Copyright © 2019 christopher downey. All rights reserved.
 //
-#warning("write some tests...")
+
 import Foundation
 import UIKit
 
@@ -33,7 +33,8 @@ struct TextValidator: Validator {}
 
 // MARK - Errors
 enum ValidationError: Error {
-    case emptyFields, invalidNumber
+    case emptyFields
+    case invalidNumber
     
     var localizedDescription: String {
         switch self {

@@ -10,13 +10,9 @@ import UIKit
 
 class HomeController: UIViewController {
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-    
     weak var mainCoordinator: MainCoordinator?
-    var homeView: HomeView?
     var dataManager: DataManager
+    lazy var homeView: HomeView = HomeView(frame: view.frame)
     
     init(dataManager: DataManager) {
         self.dataManager = dataManager
@@ -29,35 +25,49 @@ class HomeController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        homeView?.dataSource.trips = Array(dataManager.trips.values)
-        homeView?.setTotalCost()
-        homeView?.collectionView.reloadData()
-        homeView?.checkIfEmpty()
+        homeView.dataSource.trips = Array(dataManager.trips.values)
+        homeView.collectionView.reloadData()
+        homeView.setTotalCost()
+        homeView.checkIfEmpty()
     }
     
     override func loadView() {
         super.loadView()
-        
-        homeView = HomeView(frame: view.bounds)
-        
-        guard let home = homeView else { return }
-        view.addSubview(home)
-        
-        home.didSelect = { [ weak self ] trip in
-            self?.update(trip)
-        }
-        
-        home.header.btnAction = { [ weak self ] in
-            self?.create()
-        }
+        setupHomeView()
     }
-    
-    func update(_ trip: Trip) {
+}
+
+// MARK - navigation flow
+extension HomeController {
+    private func update(_ trip: Trip) {
         mainCoordinator?.overview(trip)
     }
-
-    func create() {
+    
+    private func create() {
         mainCoordinator?.create()
     }
 }
 
+// MARK - view setup
+extension HomeController {
+    private func setupHomeView() {
+        view.addSubview(homeView)
+        
+        homeView.didSelect = { [ weak self ] trip in
+            guard let strongSelf = self else { return }
+            strongSelf.update(trip)
+        }
+        
+        homeView.header.btnAction = { [ weak self ] in
+            guard let strongSelf = self else { return }
+            strongSelf.create()
+        }
+    }
+}
+
+// MARK - status bar color
+extension HomeController {
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+}

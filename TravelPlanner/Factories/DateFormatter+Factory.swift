@@ -20,7 +20,5 @@ class DateFormatterFactory {
     
     func build() -> DateFormatter {
         return dateFormatter
-    }
-    
-    
+    }    
 }

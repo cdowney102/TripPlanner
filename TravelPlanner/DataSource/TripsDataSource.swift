@@ -21,6 +21,7 @@ class TripsDataSource: NSObject, UICollectionViewDataSource {
         var name = ""
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TripCell.identifier, for: indexPath) as! TripCell
         let trip = trips[indexPath.item]
+        // trip nickname is optional so if its empty display the trip destination
         if trip.tripName == "" {
             name = trip.destination
         } else {

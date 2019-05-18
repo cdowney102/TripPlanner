@@ -12,10 +12,10 @@ import UIKit
 class TripOverviewView: UIView {
     
     lazy var header = Header(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height * 0.17))
+    var addButton: UIButton = ButtonFactory(image: UIImage(named: "pinkadd.png")!).build()
     var didSelectTripAt: ((_ row: Int) -> ())?
-    var addBtnAction: (() -> Void)?
     let dataSource = ActivityDataSource()
-    var addButton: UIButton!
+    var addBtnAction: (() -> Void)?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -56,7 +56,6 @@ extension TripOverviewView {
     }
     
     private func setupButton() {
-        addButton = ButtonFactory(image: UIImage(named: "pinkadd.png")!).build()
         addButton.addTarget(self, action: #selector(addTapped), for: .touchUpInside)
         addSubview(addButton)
         NSLayoutConstraint.activate([
@@ -68,7 +67,7 @@ extension TripOverviewView {
     }
     
     @objc private func addTapped() {
-        addButton.fireButtonTapAnimation { [ weak self ] in
+        addButton.fireTapAnimation { [ weak self ] in
             guard let strongSelf = self else { return }
             strongSelf.addBtnAction?()
         }

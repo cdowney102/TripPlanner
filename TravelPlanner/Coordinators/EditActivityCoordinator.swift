@@ -15,8 +15,8 @@ class EditActivityCoordinator: Coordinator {
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
     var dataManager: DataManager
-    var trip: Trip!
     var activityAtIndex: Int!
+    var trip: Trip!
     
     init(navigationController: UINavigationController, dataManager: DataManager) {
         self.dataManager = dataManager

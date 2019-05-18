@@ -14,8 +14,8 @@ class EditActivityView: UIView {
     lazy var header = Header(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height * 0.17))
     let nameTextField = TextFieldFactory(placeholder: "Activity Name").build()
     let costTextField = TextFieldFactory(placeholder: "Estimated cost - $0").build()
-    var updateBtnAction: (() -> Void)?
     private var updateButton = ButtonFactory(image: UIImage(named: "pinkadd.png")!).build()
+    var updateBtnAction: (() -> Void)?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -68,7 +68,7 @@ extension EditActivityView {
     }
     
     @objc private func updateTapped() {
-        updateButton.fireButtonTapAnimation { [ weak self ] in
+        updateButton.fireTapAnimation { [ weak self ] in
             guard let strongSelf = self else { return }
             strongSelf.updateBtnAction?()
         }

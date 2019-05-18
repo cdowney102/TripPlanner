@@ -34,18 +34,8 @@ extension UIView {
     }
     
     func fireTapAnimation(completion: @escaping () -> Void) {
-        UIView.animate(withDuration: 0.2, animations: {
-            self.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
-            self.setNeedsLayout()
-        }) { _ in
-            self.growBack()
-            completion()
-        }
-    }
-    
-    func fireButtonTapAnimation(completion: @escaping () -> Void) {
         UIView.animate(withDuration: 0.15, animations: {
-            self.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+            self.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
             self.setNeedsLayout()
         }) { _ in
             self.growBack()

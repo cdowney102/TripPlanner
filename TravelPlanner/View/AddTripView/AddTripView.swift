@@ -113,7 +113,7 @@ extension AddTripView {
         nickname = tripNameTextField.text ?? ""
         startDate = tripStartDate.text ?? ""
         endDate = tripEndDate.text ?? ""
-        addButton.fireButtonTapAnimation { [ weak self ] in
+        addButton.fireTapAnimation { [ weak self ] in
             guard let strongSelf = self else { return }
             strongSelf.addTripBtnAction?()
         }

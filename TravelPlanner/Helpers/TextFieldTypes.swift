@@ -9,5 +9,9 @@
 import Foundation
 
 enum TextFieldType {    
-    case startDate, endDate, cost, name, destination
+    case startDate
+    case endDate
+    case cost
+    case name
+    case destination
 }

@@ -16,11 +16,11 @@ enum ButtonType {
 final class Header: UIView {
     
     var buttonType: ButtonType = .add { didSet { updateButton() } }
+    var backButton: UIButton = ButtonFactory(image: UIImage(named: "left.png")!).build()
     var titleLabel: UILabel!
     var subtitleLabel: UILabel!
     var estimatedCostLabel: UILabel!
     var button: UIButton!
-    var backButton: UIButton!
     var homeHeader = false
     
     var btnAction: (() -> Void)?
@@ -56,7 +56,6 @@ extension Header {
     
     private func setupHomeHeader() {
         addSubviews(titleLabel, subtitleLabel, estimatedCostLabel, button)
-        #warning("change this - add button on right first, also maybe get rtid of this and use set labels outside - this setup should be internal -- make labels sizetofit adjusts fontsize")
         NSLayoutConstraint.activate([
             button.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25),
             button.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 15),
@@ -81,11 +80,9 @@ extension Header {
     }
     
     private func setupRegularHeader() {
-        backButton = ButtonFactory(image: UIImage(named: "left.png")!).build()
         backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
         
         addSubviews(titleLabel, subtitleLabel, estimatedCostLabel, button, backButton)
-        #warning("change this - add button on right first, also maybe get rtid of this and use set labels outside - this setup should be internal -- make labels sizetofit adjusts fontsize")
         NSLayoutConstraint.activate([
             button.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25),
             button.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 15),

@@ -15,7 +15,6 @@ class TripOverviewCoordinator: Coordinator {
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
     var dataManager: DataManager
-    
     var trip: Trip!
     
     init(navigationController: UINavigationController, dataManager: DataManager) {

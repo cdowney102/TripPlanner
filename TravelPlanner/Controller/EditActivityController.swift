@@ -9,15 +9,11 @@
 import UIKit
 
 class EditActivityController: UIViewController {
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
 
     weak var coordinator: EditActivityCoordinator?
+    var dataManager: DataManager
     var activity: Activity!
     var trip: Trip!
-    var dataManager: DataManager
     
     init(dataManager: DataManager) {
         self.dataManager = dataManager
@@ -30,11 +26,19 @@ class EditActivityController: UIViewController {
     
     override func loadView() {
         super.loadView()
-        
+        setupUI()
+    }
+}
+
+// MARK - setup UI
+extension EditActivityController {
+    private func setupUI() {
         let editView = EditActivityView(frame: view.frame)
+        
         view.addSubview(editView)
         
         editView.header.setupUI(destination: trip.destination, tripName: activity.name, estCost: "$\(activity.estimatedCost)", btnType: .remove, color: .pastelBeige)
+        
         editView.nameTextField.text = activity.name
         editView.costTextField.text = activity.estimatedCost
         
@@ -69,5 +73,12 @@ class EditActivityController: UIViewController {
             strongSelf.dataManager.didEditActivity(for: strongSelf.trip, activity: strongSelf.activity)
             strongSelf.coordinator?.didCancel()
         }
+    }
+}
+
+// MARK - set status bar color
+extension EditActivityController {
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 }

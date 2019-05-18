@@ -11,16 +11,14 @@ import UIKit
 
 class AddActivityView: UIView {
     
-    var name = ""
-    var cost = "0"
-    
-    // MARK - UI objects
     lazy var header = Header(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height * 0.17))
     private var nameTextField = TextFieldFactory(placeholder: "Activity Name").build()
     private var estimatedCostTextField = TextFieldFactory(placeholder: "Estimated Cost").build()
     private var addButton = ButtonFactory(image: UIImage(named: "pinkadd.png")!).build()
     var addBtnAction: (() -> Void)?
-
+    var name = ""
+    var cost = "0"
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .backgroundGray
@@ -74,7 +72,7 @@ extension AddActivityView {
         name = nameTextField.text ?? ""
         cost = estimatedCostTextField.text ?? "0"
         if cost == "" { cost = "0" }
-        addButton.fireButtonTapAnimation { [ weak self ] in
+        addButton.fireTapAnimation { [ weak self ] in
             guard let strongSelf = self else { return }
             strongSelf.addBtnAction?()
         }

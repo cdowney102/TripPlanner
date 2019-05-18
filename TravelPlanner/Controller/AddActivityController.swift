@@ -10,13 +10,8 @@ import UIKit
 
 class AddActivityController: UIViewController {
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-    
     weak var coordinator: AddActivityCoordinator?
     var dataManager: DataManager
-    var addActivityView: AddActivityView!
     var trip: Trip!
     
     init(dataManager: DataManager) {
@@ -30,14 +25,24 @@ class AddActivityController: UIViewController {
 
     override func loadView() {
         super.loadView()
+        setupUI()
+    }
+}
 
-        addActivityView = AddActivityView(frame: view.frame)
+// MARK - UI setup
+extension AddActivityController {
+    private func setupUI() {
+        let addActivityView = AddActivityView(frame: view.frame)
+        
         view.addSubview(addActivityView)
+        
         let validator = TextValidator()
+        
         addActivityView.addBtnAction = { [ weak self ] in
             guard let strongSelf = self else { return }
-            print(strongSelf.addActivityView.cost)
-            let activity = Activity(id: UUID().uuidString, name:strongSelf.addActivityView.name, estimatedCost: strongSelf.addActivityView.cost)
+            
+            let activity = Activity(id: UUID().uuidString, name: addActivityView.name, estimatedCost: addActivityView.cost)
+            
             do {
                 try validator.validate(input: activity.name, fieldType: .destination)
                 try validator.validate(input: activity.estimatedCost, fieldType: .cost)
@@ -59,5 +64,12 @@ class AddActivityController: UIViewController {
             guard let strongSelf = self else { return }
             strongSelf.coordinator?.didCancel()
         }
+    }
+}
+
+// MARK - status bar color
+extension AddActivityController {
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 }
