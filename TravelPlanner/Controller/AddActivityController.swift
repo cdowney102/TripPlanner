@@ -10,6 +10,10 @@ import UIKit
 
 class AddActivityController: UIViewController {
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     weak var coordinator: AddActivityCoordinator?
     var dataManager: DataManager
     var addActivityView: AddActivityView!

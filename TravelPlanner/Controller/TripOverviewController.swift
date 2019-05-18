@@ -12,6 +12,10 @@ import UIKit
 
 class TripOverviewController: UIViewController {
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     weak var coordinator: TripOverviewCoordinator?
     var dataManager: DataManager
     var tripOverviewView: TripOverviewView!

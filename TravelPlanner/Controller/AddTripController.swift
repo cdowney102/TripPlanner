@@ -9,6 +9,10 @@
 import UIKit
 
 class AddTripController: UIViewController {
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 
     weak var coordinator: AddTripCoordinator?
     var dataManager: DataManager

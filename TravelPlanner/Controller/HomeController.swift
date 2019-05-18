@@ -10,6 +10,10 @@ import UIKit
 
 class HomeController: UIViewController {
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     weak var mainCoordinator: MainCoordinator?
     var homeView: HomeView?
     var dataManager: DataManager
