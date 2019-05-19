@@ -14,12 +14,12 @@ extension UIImageView {
     static var usedImageCache = Set<UIImage>()
     
     func setRandomImage() {
-        // we have 37 images so reset cache if they have 38 trips to display
-        if UIImageView.imagecounter == 36 { UIImageView.usedImageCache.removeAll() }
-        var random = Int.random(in: 1..<37)
+        // we have 17 images so reset cache if they have 17 trips to display
+        if UIImageView.imagecounter == 17 { UIImageView.usedImageCache.removeAll() }
+        var random = Int.random(in: 1...17)
         var image = UIImage(named: "\(random).png")!
         while UIImageView.usedImageCache.contains(image) {
-            random = Int.random(in: 1..<37)
+            random = Int.random(in: 1...17)
             image = UIImage(named: "\(random).png")!
         }
         self.image = image
